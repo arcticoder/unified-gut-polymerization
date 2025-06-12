@@ -7,6 +7,8 @@ This repository implements a comprehensive theoretical and computational framewo
 - **Unified Gauge Polymerization**: Apply polymer quantization directly to GUT gauge fields rather than individual Standard Model sectors
 - **Hypergeometric Product Formulas**: Closed-form expressions for SU(N) recoupling coefficients
 - **Multiplicative Enhancement**: Coherently enhance electroweak, strong, and unified interactions with a single polymer parameter
+- **Running Coupling Analysis**: Calculate unified coupling running with explicit β-function coefficients for SU(5), SO(10), and E6
+- **Non-perturbative Instanton Effects**: Polymer-modified instanton rates with group-specific parameters
 - **Experimental Predictions**: Quantitative predictions for proton decay, neutrino masses, and collider signatures
 
 ## Mathematical Framework
@@ -27,11 +29,40 @@ D̃ᵃᵇₘᵤᵥ(k) = δᵃᵇ × [ηₘᵤᵥ - kₘkᵥ/k²]/μ² × sinc²(
 
 Where indices a,b run over the entire adjoint representation of the unified group.
 
+The running coupling with polymer effects incorporated:
+
+```
+α_eff(E) = α₀/(1 - b_G/(2π)·α₀·ln(E/E₀))
+```
+
+Where b_G is the one-loop β-function coefficient specific to each GUT group.
+
+The instanton rate with polymer modification:
+
+```
+Γ_inst^poly = Λ_G⁴ exp[-8π²/α_s(μ)·sin(μ·Φ_inst)/μ]
+```
+
+Where Λ_G is the characteristic scale of the gauge group and Φ_inst is the instanton topological charge.
+
 ## Repository Structure
 
-- `gut_unified_polymerization/`: Core implementation modules
+- `unified_gut_polymerization/`: Core implementation modules
+  - `core.py`: Core numerical implementation
+  - `recoupling.py`: Symbolic derivation of GUT recoupling coefficients
+  - `taylor_extraction.py`: Taylor extraction to hypergeometric product mapping
+  - `running_coupling.py`: Running coupling and instanton effects
 - `docs/`: Mathematical derivations and documentation
+  - `gut_polymer_core.tex`: Mathematical derivations for GUT polymerization
+  - `taylor_extraction_su5.tex`: Self-contained SU(5) Taylor extraction
+  - `unified_polymerized_feynman_rules.tex`: Side-by-side comparison of classical vs polymerized Feynman rules
+  - `running_coupling_instantons.tex`: Derivation of running coupling and instanton formulas with GUT constants
 - `examples/`: Usage examples and demonstration scripts
+  - `demo_unified_gut_polymerization.py`: Parameter scans and plots
+  - `advanced_lqg_integration.py`: Integration with LQG code
+  - `symbolic_gut_recoupling.py`: Demonstrates symbolic derivation
+  - `polymerized_feynman_rules_demo.py`: Numerical demonstration of polymerized propagator and vertices
+  - `running_coupling_demo.py`: Visualization of running coupling and instanton rates
 - `tests/`: Validation and testing suite
 
 ## Installation
@@ -48,7 +79,7 @@ pip install -e .
 ## Usage Example
 
 ```python
-from unified_gut_polymerization import UnifiedGaugePolymerization, GUTConfig
+from unified_gut_polymerization import UnifiedGaugePolymerization, GUTConfig, RunningCouplingInstanton
 
 # Configure a SU(5) GUT polymerization
 config = GUTConfig(gut_group="SU(5)", mu_polymer=0.1)
@@ -57,6 +88,13 @@ gut_poly = UnifiedGaugePolymerization(config)
 # Calculate cross-section enhancements
 enhancements = gut_poly.unified_cross_section_enhancement(center_of_mass_energy=1000.0)
 print(f"Total multiplicative enhancement: {enhancements['total_multiplicative']:.2e}x")
+
+# Running coupling and instanton calculations
+rc_calculator = RunningCouplingInstanton(group="SU5")
+coupling_at_1TeV = rc_calculator.running_coupling(energy=1e3)
+instanton_rate = rc_calculator.instanton_rate(coupling=coupling_at_1TeV, mu=0.1)
+print(f"SU(5) coupling at 1 TeV: {coupling_at_1TeV:.5f}")
+print(f"Polymerized instanton rate: {instanton_rate:.2e}")
 ```
 
 ## Dependencies
