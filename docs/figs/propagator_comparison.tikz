@@ -1,0 +1,19 @@
+\begin{tikzpicture}[scale=0.8]
+    % Classical propagator
+    \begin{scope}[shift={(-3,0)}]
+        \draw[thick,su5color] (0,0) -- (3,0);
+        \node[anchor=south] at (1.5,0) {$D_G^{ab}$};
+        \node[anchor=north east] at (0,0) {$a,\mu$};
+        \node[anchor=north west] at (3,0) {$b,\nu$};
+        \node[anchor=north] at (1.5,-1.2) {Classical};
+    \end{scope}
+    
+    % Polymerized propagator
+    \begin{scope}[shift={(3,0)}]
+        \draw[thick,su5color,decorate,decoration={snake,amplitude=0.3mm,segment length=2mm}] (0,0) -- (3,0);
+        \node[anchor=south] at (1.5,0) {$\widetilde{D}_G^{ab}$};
+        \node[anchor=north east] at (0,0) {$a,\mu$};
+        \node[anchor=north west] at (3,0) {$b,\nu$};
+        \node[anchor=north] at (1.5,-1.2) {Polymerized};
+    \end{scope}
+\end{tikzpicture}
