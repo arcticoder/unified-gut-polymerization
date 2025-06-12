@@ -1,0 +1,78 @@
+% gut_polymer.sty - Style file for GUT Unified Polymerization documentation
+\ProvidesPackage{gut_polymer}[2025/06/12 GUT Unified Polymerization]
+
+% Required packages
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{amsthm}
+\RequirePackage{mathtools}
+\RequirePackage{bbm}
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+
+% Useful macros for GUT polymerization
+\newcommand{\SU}[1]{\mathrm{SU}(#1)}
+\newcommand{\SO}[1]{\mathrm{SO}(#1)}
+\newcommand{\E}[1]{\mathrm{E}_{#1}}
+\newcommand{\U}[1]{\mathrm{U}(#1)}
+
+\newcommand{\sinc}{\operatorname{sinc}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\Det}{\operatorname{Det}}
+
+% Vector notation
+\newcommand{\Vec}[1]{\boldsymbol{#1}}
+\newcommand{\Mat}[1]{\mathbf{#1}}
+
+% GUT specific notations
+\newcommand{\gutadj}[1]{\mathbf{adj}(#1)}
+\newcommand{\gutfund}[1]{\mathbf{fund}(#1)}
+\newcommand{\smatrix}[1]{\mathcal{S}^{#1}}
+
+% Polymer notations
+\newcommand{\mug}{\mu_{\mathrm{g}}}
+\newcommand{\polymod}[1]{\frac{\sin(\mug #1)}{\mug #1}}
+\newcommand{\polyprop}[1]{\frac{\sin^2(\mug \sqrt{#1})}{#1}}
+
+% Matrix elements
+\newcommand{\mel}[3]{\langle #1 | #2 | #3 \rangle}
+
+% Hypergeometric functions
+\newcommand{\Fhyper}[4]{{}_{#1}F_{#2}\left(#3;#4\right)}
+
+% Unified vertex
+\newcommand{\uvertex}[5]{V^{#1}_{#2}(#3) \times \prod_{i=1}^{#4} \polymod{#5_i}}
+
+% Enhancement factors
+\newcommand{\enhance}[1]{R_{#1}}
+
+% Common representations
+\newcommand{\rep}[1]{\mathbf{#1}}
+\newcommand{\fund}[1]{\rep{#1}}
+\newcommand{\adj}{\rep{adj}}
+\newcommand{\symm}[1]{\rep{S}^{#1}}
+\newcommand{\asymm}[1]{\rep{A}^{#1}}
+
+% Standard Model multiplets
+\newcommand{\doublet}[2]{\begin{pmatrix} #1 \\ #2 \end{pmatrix}}
+\newcommand{\triplet}[3]{\begin{pmatrix} #1 \\ #2 \\ #3 \end{pmatrix}}
+
+% Theorem-like environments
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{note}[theorem]{Note}
+
+% Colors for diagrams
+\definecolor{su5color}{RGB}{0,102,204}
+\definecolor{su3color}{RGB}{204,0,0}
+\definecolor{su2color}{RGB}{0,153,0}
+\definecolor{u1color}{RGB}{153,102,0}
