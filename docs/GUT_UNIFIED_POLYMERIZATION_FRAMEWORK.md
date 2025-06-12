@@ -39,6 +39,16 @@ where:
 
 This mapping allows numerical calculations to be performed efficiently.
 
+### 1.3 Master Generating Functional
+
+For a rank-r group G (e.g. r=4 for SU(5), r=5 for SO(10)), we define spinors w_v ∈ ℂʳ at each node v and edge variables x_e. The master generating functional is given by:
+
+```
+G_G({x_e}) = ∫∏_{v=1}^V(d^{2r}w_v/π^r) exp(-∑_v‖w_v‖²) ∏_{e=(i,j)}exp(x_e·ε_G(w_i,w_j)) = det(I - K_G({x_e}))^(-1/2)
+```
+
+Here K_G is the rV×rV block-adjacency matrix for the unified group. This formulation generalizes the SU(2) generating functional approach to higher-rank GUT groups, providing a systematic way to derive recoupling coefficients.
+
 ### 1.3 Group-Specific Features
 
 Each GUT group has specific mathematical properties that affect polymerization:
@@ -53,10 +63,11 @@ Each GUT group has specific mathematical properties that affect polymerization:
 
 ### 2.1 Core Components
 
-The framework is organized around two main classes:
+The framework is organized around three main classes:
 
 - **GUTConfig**: Configuration container that defines the parameters for a polymer GUT scenario
 - **UnifiedGaugePolymerization**: Core implementation of the polymer calculations
+- **GUTRecouplingCalculator**: Symbolic derivation of recoupling coefficients
 
 ### 2.2 Key Features
 
@@ -67,13 +78,16 @@ The core functionality includes:
 - Running coupling with polymer effects
 - Cross-section enhancement factors
 - Threshold correction analysis
+- Symbolic derivation of the determinant-to-hypergeometric mapping
+- Closed-form expressions for GUT recoupling coefficients
 
 ### 2.3 Module Organization
 
 ```
-gut_unified_polymerization/
+unified_gut_polymerization/
 ├── __init__.py      # Exports main classes
-├── core.py          # Core implementation
+├── core.py          # Core implementation for numerical calculations
+├── recoupling.py    # Symbolic derivation of recoupling coefficients
 ```
 
 ## 3. Integration with Existing LQG Code
