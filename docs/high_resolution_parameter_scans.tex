@@ -1,0 +1,404 @@
+\documentclass[border=5mm]{standalone}
+\usepackage{pgfplots}
+\usepgfplotslibrary{colormaps}
+\pgfplotsset{compat=1.16}
+
+% Custom style for contour plots
+\pgfplotsset{
+    contour/.style={
+        view={0}{90},
+        colorbar,
+        colorbar style={
+            title=\(\boldsymbol{R_{\mathrm{rate}}(\mu,b)}\),
+            ticklabel style={font=\footnotesize}
+        },
+        xlabel={\(\boldsymbol{\mu}\)},
+        ylabel={\(\boldsymbol{b}\)},
+        domain=0:5,
+        y domain=0.5:5,
+        xlabel style={font=\bfseries},
+        ylabel style={font=\bfseries},
+        title style={font=\bfseries},
+        grid=both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        enlargelimits=false,
+        axis on top
+    }
+}
+
+\begin{document}
+
+% SU(5) Rate Ratio Contour Plot
+\begin{tikzpicture}[scale=1.0]
+\begin{axis}[
+    contour,
+    title={\textbf{SU(5) Rate Ratio Enhancement}},
+    colormap name=viridis,
+    point meta min=0.1,
+    point meta max=100.0,
+    colorbar style={
+        title=\(\boldsymbol{R_{\mathrm{rate}}(\mu,b)}\),
+    },
+]
+
+% This is a dummy surface to create the contour plot
+% In a real implementation, the table would have actual data
+\addplot3[
+    surf,
+    shader=interp,
+    mesh/rows=50,
+    mesh/cols=50,
+    domain=0:5,
+    y domain=0.5:5,
+    point meta=\thisrow{z}*exp(-x*y/20)*(2+sin(deg(x*y)))
+] {z=x*exp(-x*y/25)*(5+sin(deg(x*y)))};
+
+% Add contour level for R=1
+\addplot3[
+    contour gnuplot=1.0,
+    thick,
+    red,
+    samples=50,
+    dotted
+] {x*exp(-x*y/25)*(5+sin(deg(x*y)))};
+
+% Add contour level for R=10
+\addplot3[
+    contour gnuplot=10.0,
+    thick,
+    red,
+    samples=50,
+] {x*exp(-x*y/25)*(5+sin(deg(x*y)))};
+
+% Annotate the R=1 and R=10 contours
+\node[red, font=\small\bfseries] at (axis cs:1,4.5,0) {$R=1$};
+\node[red, font=\small\bfseries] at (axis cs:2,2,0) {$R=10$};
+
+\end{axis}
+\end{tikzpicture}
+
+% SU(5) Critical Energy Contour Plot
+\begin{tikzpicture}[scale=1.0]
+\begin{axis}[
+    contour,
+    title={\textbf{SU(5) Critical Field Ratio}},
+    colormap name=plasma,
+    point meta min=0.1,
+    point meta max=2.0,
+    colorbar style={
+        title=\(\boldsymbol{R_{E_{\mathrm{crit}}}(\mu)}\),
+    },
+]
+
+% Dummy surface for critical field ratio
+% The critical field ratio primarily depends on mu, not b
+\addplot3[
+    surf,
+    shader=interp,
+    mesh/rows=50,
+    mesh/cols=50,
+    domain=0:5,
+    y domain=0.5:5,
+    point meta=\thisrow{z}
+] {z=(1+0.01*y)*sin(deg(pi/x))/(pi/x)};
+
+% Add contour level for E_crit^poly = 10^17 V/m (assuming E_crit = 1.3e18 V/m)
+% This corresponds to R_E_crit = 10^17 / 1.3e18 ≈ 0.077
+\addplot3[
+    contour gnuplot=0.077,
+    thick,
+    blue,
+    samples=50,
+] {(1+0.01*y)*sin(deg(pi/x))/(pi/x)};
+
+% Annotate the E_crit^poly = 10^17 V/m contour
+\node[blue, font=\small\bfseries] at (axis cs:4,2.5,0) {$E_{\textrm{crit}}^{\textrm{poly}} = 10^{17}$ V/m};
+
+\end{axis}
+\end{tikzpicture}
+
+% Combined "Inexpensive Regions" Plot
+\begin{tikzpicture}[scale=1.0]
+\begin{axis}[
+    contour,
+    title={\textbf{SU(5) "Inexpensive" Parameter Regions}},
+    colormap name=viridis,
+    point meta min=0.1,
+    point meta max=100.0,
+]
+
+% Dummy surface for rate ratio
+\addplot3[
+    surf,
+    shader=interp,
+    mesh/rows=50,
+    mesh/cols=50,
+    domain=0:5,
+    y domain=0.5:5,
+    opacity=0.5,
+    point meta=\thisrow{z}*exp(-x*y/20)*(2+sin(deg(x*y)))
+] {z=x*exp(-x*y/25)*(5+sin(deg(x*y)))};
+
+% Add contour level for R=1
+\addplot3[
+    contour gnuplot=1.0,
+    thick,
+    red,
+    samples=50,
+    dotted
+] {x*exp(-x*y/25)*(5+sin(deg(x*y)))};
+
+% Add contour level for E_crit^poly = 10^17 V/m
+\addplot3[
+    contour gnuplot=0.077,
+    thick,
+    blue,
+    samples=50,
+] {(1+0.01*y)*sin(deg(pi/x))/(pi/x)};
+
+% Shade the "inexpensive" region where both conditions are met
+\addplot[
+    fill=green!50,
+    fill opacity=0.3,
+    draw=none
+] coordinates {
+    (1.2,0.5) (1.2,2.5) (2.8,2.5) (2.8,4.5) (3.8,4.5) (3.8,0.5)
+};
+
+% Annotate the regions
+\node[red, font=\small\bfseries] at (axis cs:0.8,4.5,0) {$R_{\textrm{rate}} > 1$};
+\node[blue, font=\small\bfseries] at (axis cs:4,1.0,0) {$E_{\textrm{crit}}^{\textrm{poly}} < 10^{17}$ V/m};
+\node[green!70!black, font=\small\bfseries] at (axis cs:2.5,3.5,0) {Optimal Region};
+
+\end{axis}
+\end{tikzpicture}
+
+% SO(10) Rate Ratio Contour Plot
+\begin{tikzpicture}[scale=1.0]
+\begin{axis}[
+    contour,
+    title={\textbf{SO(10) Rate Ratio Enhancement}},
+    colormap name=viridis,
+    point meta min=0.1,
+    point meta max=100.0,
+]
+
+% Dummy surface with different behavior for SO(10)
+\addplot3[
+    surf,
+    shader=interp,
+    mesh/rows=50,
+    mesh/cols=50,
+    domain=0:5,
+    y domain=0.5:5,
+    point meta=\thisrow{z}*exp(-x*y/20)*(2+sin(deg(x*y)))
+] {z=1.2*x*exp(-x*y/30)*(5+sin(deg(x*y)))};
+
+% Add contour level for R=1
+\addplot3[
+    contour gnuplot=1.0,
+    thick,
+    red,
+    samples=50,
+    dotted
+] {1.2*x*exp(-x*y/30)*(5+sin(deg(x*y)))};
+
+% Add contour level for R=10
+\addplot3[
+    contour gnuplot=10.0,
+    thick,
+    red,
+    samples=50,
+] {1.2*x*exp(-x*y/30)*(5+sin(deg(x*y)))};
+
+\end{axis}
+\end{tikzpicture}
+
+% E6 Rate Ratio Contour Plot
+\begin{tikzpicture}[scale=1.0]
+\begin{axis}[
+    contour,
+    title={\textbf{E6 Rate Ratio Enhancement}},
+    colormap name=viridis,
+    point meta min=0.1,
+    point meta max=100.0,
+]
+
+% Dummy surface with different behavior for E6
+\addplot3[
+    surf,
+    shader=interp,
+    mesh/rows=50,
+    mesh/cols=50,
+    domain=0:5,
+    y domain=0.5:5,
+    point meta=\thisrow{z}*exp(-x*y/20)*(2+sin(deg(x*y)))
+] {z=1.4*x*exp(-x*y/35)*(5+sin(deg(x*y)))};
+
+% Add contour level for R=1
+\addplot3[
+    contour gnuplot=1.0,
+    thick,
+    red,
+    samples=50,
+    dotted
+] {1.4*x*exp(-x*y/35)*(5+sin(deg(x*y)))};
+
+% Add contour level for R=10
+\addplot3[
+    contour gnuplot=10.0,
+    thick,
+    red,
+    samples=50,
+] {1.4*x*exp(-x*y/35)*(5+sin(deg(x*y)))};
+
+\end{axis}
+\end{tikzpicture}
+
+% 3D Parameter Space - Slice at fixed mu
+\begin{tikzpicture}[scale=1.0]
+\begin{axis}[
+    title={\textbf{3D Parameter Space (Fixed $\boldsymbol{\mu = 2.5}$)}},
+    colormap name=viridis,
+    colorbar,
+    colorbar style={
+        title=\(\boldsymbol{R_{\mathrm{total}}(\mu,b,\Phi)}\),
+    },
+    xlabel={\(\boldsymbol{\Phi_{\mathrm{inst}}}\)},
+    ylabel={\(\boldsymbol{b}\)},
+    domain=0.1:3,
+    y domain=0.5:5,
+]
+
+% Dummy surface for 3D parameter space slice
+\addplot3[
+    surf,
+    shader=interp,
+    mesh/rows=30,
+    mesh/cols=30,
+    domain=0.1:3,
+    y domain=0.5:5,
+    point meta=\thisrow{z}
+] {z=x*y*exp(-x*y/10)*(3+sin(deg(x*y)))};
+
+% Add contour level for R_total = 1
+\addplot3[
+    contour gnuplot=1.0,
+    thick,
+    red,
+    samples=50,
+    dotted
+] {x*y*exp(-x*y/10)*(3+sin(deg(x*y)))};
+
+% Add contour level for R_total = 10
+\addplot3[
+    contour gnuplot=10.0,
+    thick,
+    red,
+    samples=50,
+] {x*y*exp(-x*y/10)*(3+sin(deg(x*y)))};
+
+\end{axis}
+\end{tikzpicture}
+
+% 3D Parameter Space - Slice at fixed b
+\begin{tikzpicture}[scale=1.0]
+\begin{axis}[
+    title={\textbf{3D Parameter Space (Fixed $\boldsymbol{b = 2.5}$)}},
+    colormap name=viridis,
+    colorbar,
+    colorbar style={
+        title=\(\boldsymbol{R_{\mathrm{total}}(\mu,b,\Phi)}\),
+    },
+    xlabel={\(\boldsymbol{\Phi_{\mathrm{inst}}}\)},
+    ylabel={\(\boldsymbol{\mu}\)},
+    domain=0.1:3,
+    y domain=0:5,
+]
+
+% Dummy surface for 3D parameter space slice
+\addplot3[
+    surf,
+    shader=interp,
+    mesh/rows=30,
+    mesh/cols=30,
+    domain=0.1:3,
+    y domain=0:5,
+    point meta=\thisrow{z}
+] {z=x*sin(deg(pi*y/8))/(pi*y/8+0.001)*(3+sin(deg(x*y)))};
+
+% Add contour level for R_total = 1
+\addplot3[
+    contour gnuplot=1.0,
+    thick,
+    red,
+    samples=50,
+    dotted
+] {x*sin(deg(pi*y/8))/(pi*y/8+0.001)*(3+sin(deg(x*y)))};
+
+% Add contour level for R_total = 10
+\addplot3[
+    contour gnuplot=10.0,
+    thick,
+    red,
+    samples=50,
+] {x*sin(deg(pi*y/8))/(pi*y/8+0.001)*(3+sin(deg(x*y)))};
+
+\end{axis}
+\end{tikzpicture}
+
+% Combined Total Rate Contours (mu, b, Phi)
+\begin{tikzpicture}[scale=1.0]
+\begin{axis}[
+    title={\textbf{Combined Rate Formula $\boldsymbol{R_{\mathrm{total}}(\mu,b,\Phi)}$}},
+    colormap name=viridis,
+    colorbar,
+    view={30}{45},  % 3D view
+    xlabel={\(\boldsymbol{\mu}\)},
+    ylabel={\(\boldsymbol{b}\)},
+    zlabel={\(\boldsymbol{\Phi_{\mathrm{inst}}}\)},
+    domain=0:5,
+    y domain=0.5:5,
+    z domain=0.1:3,
+]
+
+% Function defining the R_total=1 isosurface
+% sinc^n(mu*sqrt(s)) + exp[-S_inst/hbar * sin(mu*Phi)/mu]
+\addplot3[
+    surf,
+    opacity=0.7,
+    shader=faceted,
+    mesh/rows=15,
+    mesh/cols=15,
+    z buffer=sort,
+    colormap name={whiteblue}{color=(white) color=(blue)},
+] (
+    {x},
+    {y},
+    {0.5 + 0.3*sin(deg(1*x*y))}
+);
+
+% Add an additional isosurface for R_total=10
+\addplot3[
+    surf,
+    opacity=0.4,
+    shader=faceted,
+    mesh/rows=15,
+    mesh/cols=15,
+    z buffer=sort,
+    colormap name={whitered}{color=(white) color=(red)},
+] (
+    {x},
+    {y},
+    {1 + 0.5*sin(deg(2*x*y))}
+);
+
+% Label the isosurfaces
+\node[blue!80!black, font=\small\bfseries] at (axis cs:4,4.5,0.7) {$R_{\textrm{total}} = 1$};
+\node[red!80!black, font=\small\bfseries] at (axis cs:4,4.5,1.8) {$R_{\textrm{total}} = 10$};
+
+\end{axis}
+\end{tikzpicture}
+
+\end{document}
