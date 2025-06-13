@@ -1,0 +1,83 @@
+{
+  "test_mass_kg": 1e-12,
+  "west_baseline": {
+    "confinement_s": 1337.0,
+    "temperature_c": 50000000.0,
+    "power_w": 2000000.0,
+    "energy_kwh": 742.7777777777778
+  },
+  "conversion_methods": {
+    "tpv_lab": {
+      "name": "TPV Laboratory Demo",
+      "description": "Best case laboratory conditions",
+      "standard": {
+        "efficiency": 0.35,
+        "energy_kwh": 0.017475795142104785,
+        "cost_per_kwh": 3576375.180172346,
+        "energy_loss_percent": 65.0,
+        "west_energy_ratio": 2.35276224800214e-05
+      },
+      "polymer_enhanced": {
+        "efficiency": 0.5249999999999999,
+        "energy_kwh": 0.026213692713157176,
+        "cost_per_kwh": 2384250.1201148974,
+        "energy_loss_percent": 47.50000000000001,
+        "west_energy_ratio": 3.5291433720032096e-05
+      }
+    },
+    "tpv_system": {
+      "name": "TPV Full System",
+      "description": "Real-world system with losses",
+      "standard": {
+        "efficiency": 0.05,
+        "energy_kwh": 0.0024965421631578267,
+        "cost_per_kwh": 25034626.26120642,
+        "energy_loss_percent": 95.0,
+        "west_energy_ratio": 3.361088925717343e-06
+      },
+      "polymer_enhanced": {
+        "efficiency": 0.07500000000000001,
+        "energy_kwh": 0.0037448132447367405,
+        "cost_per_kwh": 16689750.840804277,
+        "energy_loss_percent": 92.5,
+        "west_energy_ratio": 5.041633388576015e-06
+      }
+    },
+    "thermionic": {
+      "name": "Thermionic Conversion",
+      "description": "Direct thermal to electrical",
+      "standard": {
+        "efficiency": 0.15,
+        "energy_kwh": 0.00748962648947348,
+        "cost_per_kwh": 8344875.420402139,
+        "energy_loss_percent": 85.0,
+        "west_energy_ratio": 1.0083266777152029e-05
+      },
+      "polymer_enhanced": {
+        "efficiency": 0.195,
+        "energy_kwh": 0.009736514436315524,
+        "cost_per_kwh": 6419134.938770877,
+        "energy_loss_percent": 80.5,
+        "west_energy_ratio": 1.3108246810297637e-05
+      }
+    },
+    "direct": {
+      "name": "Direct Conversion",
+      "description": "Theoretical optimum",
+      "standard": {
+        "efficiency": 0.25,
+        "energy_kwh": 0.012482710815789133,
+        "cost_per_kwh": 5006925.252241284,
+        "energy_loss_percent": 75.0,
+        "west_energy_ratio": 1.6805444628586715e-05
+      },
+      "polymer_enhanced": {
+        "efficiency": 0.5,
+        "energy_kwh": 0.024965421631578267,
+        "cost_per_kwh": 2503462.626120642,
+        "energy_loss_percent": 50.0,
+        "west_energy_ratio": 3.361088925717343e-05
+      }
+    }
+  }
+}

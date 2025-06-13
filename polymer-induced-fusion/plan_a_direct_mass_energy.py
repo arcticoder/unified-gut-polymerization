@@ -266,14 +266,14 @@ class PolymerMassEnergyPipeline:
         if viable_mu:
             ax4.scatter(viable_mu, [1]*len(viable_mu), color='green', s=50, alpha=0.7, label='Economically Viable')
         if non_viable_mu:
-            ax4.scatter(non_viable_mu, [0]*len(non_viable_mu), color='red', s=50, alpha=0.7, label='Not Viable')
-        
+            ax4.scatter(non_viable_mu, [0]*len(non_viable_mu), color='red', s=50, alpha=0.7, label='Not Viable')        
         ax4.set_xlabel('Polymer Scale μ')
         ax4.set_ylabel('Economic Viability')
         ax4.set_title('Economic Viability Map')
         ax4.legend()
         ax4.grid(True, alpha=0.3)
-          plt.tight_layout()
+        
+        plt.tight_layout()
         
         if save_path:
             plt.savefig(save_path, dpi=300, bbox_inches='tight')
@@ -391,8 +391,7 @@ def demonstrate_plan_a():
     nasa_data = benchmark_data['nasa_baseline']
     test_data = benchmark_data['test_case']
     west_comp = benchmark_data['west_comparison']
-    
-    print(f"  NASA source: {nasa_data['source']}")
+      print(f"  NASA source: {nasa_data['source']}")
     print(f"  Test mass: {test_data['antimatter_mass_ng']:.3f} ng")
     print(f"  vs WEST energy ratio: {west_comp['energy_ratio']:.2e}×")
     print()
@@ -401,7 +400,6 @@ def demonstrate_plan_a():
     print("=" * 60)
     print("REGULAR MATTER ANALYSIS")
     print("=" * 60)
-    
     pipeline = PolymerMassEnergyPipeline(west)
     sweep_results = pipeline.run_polymer_scale_sweep()
     
@@ -418,13 +416,127 @@ def demonstrate_plan_a():
     print(f"  Polymer conversion energy: {benchmark['polymer_conversion']['energy_yield_kwh']:.2e} kWh")
     print(f"  Energy ratio: {benchmark['polymer_conversion']['energy_ratio_vs_west']:.2e}×")
     
-    print("\n" + "=" * 80)
-    print("SUMMARY: Antimatter vs Regular Matter")
+    print("=" * 80)
+    print("SUMMARY: Comprehensive Plan A Analysis")
     print("=" * 80)
     print(f"Regular matter (1g) energy: {energy_data['energy_kwh']:.2e} kWh")
-    print(f"Antimatter (1fg) energy: {antimatter_cost_data['energy_yield_kwh']:.2e} kWh")
+    print(f"Antimatter (1fg) theoretical: {antimatter_cost_data['energy_yield_kwh']:.2e} kWh")
     print(f"NASA antimatter cost: ${nasa_data['cost_per_gram_usd']:.2e}/gram")
-    print("Recommendation: Focus on polymer-enhanced production efficiency")
+    
+    # NEW: Energy Conversion Efficiency Analysis (Step 3)
+    print("\n" + "=" * 80)
+    print("STEP 3: ENERGY CONVERSION EFFICIENCY ANALYSIS")
+    print("511 keV photon → electricity conversion")
+    print("=" * 80)
+    
+    # Initialize realistic converter
+    realistic_converter = RealisticAntimatterConverter(
+        polymer_scale_mu=5.0,
+        conversion_method='tpv_system',
+        polymer_enhanced=True
+    )
+    
+    test_mass = 1e-12  # 1 picogram
+    
+    # Compare theoretical vs realistic conversion
+    theoretical_data = realistic_converter.theoretical_annihilation_energy(test_mass)
+    realistic_data = realistic_converter.realistic_energy_conversion(test_mass)
+    cost_realistic = realistic_converter.comprehensive_cost_analysis(test_mass)
+    
+    print(f"Antimatter Analysis ({test_mass*1e15:.0f} femtograms):")
+    print(f"  Theoretical energy (E=2mc²): {theoretical_data['theoretical_energy_kwh']:.4f} kWh")
+    print(f"  Realistic energy (with conversion): {realistic_data['realistic_energy_kwh']:.4f} kWh")
+    print(f"  Conversion efficiency: {realistic_data['conversion_efficiency']*100:.1f}%")
+    print(f"  Total efficiency loss: {(1-realistic_data['efficiency_loss_factor'])*100:.1f}%")
+    print(f"  Conversion method: {realistic_data['conversion_method']}")
+    print()
+    
+    # Cost impact of conversion efficiency
+    print("Economic Impact of Conversion Efficiency:")
+    theoretical_cost_per_kwh = (test_mass * 1000 * 62.5e12) / theoretical_data['theoretical_energy_kwh']
+    realistic_cost_per_kwh = cost_realistic['cost_per_kwh_usd']
+    efficiency_penalty = realistic_cost_per_kwh / theoretical_cost_per_kwh
+    
+    print(f"  Theoretical cost/kWh: ${theoretical_cost_per_kwh:.2e}")
+    print(f"  Realistic cost/kWh: ${realistic_cost_per_kwh:.2e}")
+    print(f"  Efficiency penalty: {efficiency_penalty:.1f}× cost increase")
+    print()
+    
+    # Conversion method comparison
+    print("Conversion Method Comparison:")
+    methods = ['tpv_lab', 'tpv_system', 'thermionic', 'direct']
+    method_names = ['TPV Laboratory', 'TPV Full System', 'Thermionic', 'Direct Conversion']
+    
+    for method, name in zip(methods, method_names):
+        converter = RealisticAntimatterConverter(
+            polymer_scale_mu=5.0,
+            conversion_method=method,
+            polymer_enhanced=True
+        )
+        data = converter.realistic_energy_conversion(test_mass)
+        cost = converter.comprehensive_cost_analysis(test_mass)
+        
+        print(f"  {name}:")
+        print(f"    Efficiency: {data['conversion_efficiency']*100:.1f}%")
+        print(f"    Cost/kWh: ${cost['cost_per_kwh_usd']:.2e}")
+        print(f"    Grid competitive: {cost['grid_competitive']}")
+    
+    print()
+    
+    # WEST baseline benchmarking
+    print("WEST Tokamak Baseline Benchmarking:")
+    print("-" * 40)
+    west_benchmark = WESTBenchmarkMetrics()
+    benchmark_data = realistic_converter.west_benchmark_comparison(test_mass)
+    
+    west_base = benchmark_data['west_baseline']
+    antimatter_sys = benchmark_data['antimatter_system']
+    comparison = benchmark_data['comparison_metrics']
+    
+    print(f"WEST Reference Points (February 12, 2025):")
+    print(f"  Confinement time: {west_base['confinement_time_s']:.0f} s")
+    print(f"  Temperature: {west_base['temperature_c']/1e6:.0f}×10⁶ °C")
+    print(f"  Heating power: {west_base['heating_power_w']/1e6:.1f} MW")
+    print(f"  Total energy: {west_base['total_energy_kwh']:.1f} kWh")
+    print()
+    
+    print(f"Antimatter System Comparison:")
+    print(f"  Realistic energy: {antimatter_sys['realistic_energy_kwh']:.4f} kWh")
+    print(f"  Energy ratio vs WEST: {comparison['energy_ratio']:.2e}×")
+    print(f"  Power ratio vs WEST: {comparison['power_ratio']:.2e}×")
+    print(f"  Conversion efficiency: {antimatter_sys['conversion_efficiency']*100:.1f}%")
+    print()
+    
+    # Target metrics assessment
+    targets = west_benchmark.meets_targets(1500, 150e6, 1.6e6)  # Target values
+    print(f"WEST Improvement Targets:")
+    print(f"  Target confinement: > {west_benchmark.target_confinement_time_s:.0f} s")
+    print(f"  Target temperature: {west_benchmark.target_temperature_c/1e6:.0f}×10⁶ °C (ITER goal)")
+    print(f"  Target power reduction: < {west_benchmark.baseline_heating_power_w * west_benchmark.target_heating_power_reduction/1e6:.1f} MW")
+    print()
+    
+    # Efficiency pipeline analysis
+    print("Running Conversion Efficiency Pipeline...")
+    efficiency_pipeline = ConversionEfficiencyPipeline(west)
+    
+    # Run conversion method comparison
+    conversion_comparison = efficiency_pipeline.run_conversion_method_comparison(
+        antimatter_mass_kg=test_mass,
+        mu_range=(0.1, 10.0),
+        num_points=20
+    )
+    
+    # Efficiency impact analysis
+    efficiency_impact = efficiency_pipeline.efficiency_impact_analysis(test_mass)
+    
+    print("Efficiency Impact Summary:")
+    for method, data in efficiency_impact['efficiency_gaps'].items():
+        print(f"  {method.replace('_', ' ').title()}:")
+        print(f"    Energy loss: {data['energy_loss_percentage']:.1f}%")
+        print(f"    Cost penalty: {data['efficiency_penalty_factor']:.1f}×")
+    
+    print("\nRecommendation: Focus on polymer-enhanced direct conversion methods")
+    print("and improved thermophotovoltaic systems for optimal efficiency.")
 
 if __name__ == "__main__":
     demonstrate_plan_a()
@@ -780,5 +892,529 @@ class AntimatterProductionPipeline:
         if save_path:
             plt.savefig(save_path, dpi=300, bbox_inches='tight')
             logger.info(f"Antimatter visualization saved to {save_path}")
+        else:
+            plt.show()
+
+@dataclass
+class EnergyConversionEfficiency:
+    """Energy conversion efficiency data for antimatter annihilation products"""
+    
+    # Antimatter annihilation produces 511 keV gamma rays
+    annihilation_photon_energy_kev: float = 511.0  # keV per photon
+    photons_per_annihilation: int = 2  # Two 511 keV photons per electron-positron pair
+    
+    # Conversion efficiency data from laboratory demonstrations
+    # Source: Wikipedia - Thermophotovoltaic energy conversion
+    laboratory_tpv_efficiency: float = 0.35  # 35% maximum demonstrated
+    full_system_tpv_efficiency: float = 0.05  # 5% typical full-system efficiency
+    
+    # Alternative conversion methods
+    thermionic_efficiency: float = 0.15  # ~15% for thermionic conversion
+    direct_conversion_efficiency: float = 0.25  # Theoretical direct conversion
+    
+    # Polymer-enhanced conversion factors
+    polymer_tpv_enhancement: float = 1.5  # 50% improvement potential
+    polymer_thermionic_enhancement: float = 1.3  # 30% improvement potential
+    polymer_direct_enhancement: float = 2.0  # 100% improvement potential
+    
+    def get_conversion_efficiency(self, method: str, polymer_enhanced: bool = False) -> float:
+        """
+        Get conversion efficiency for specified method
+        
+        Args:
+            method: Conversion method ('tpv_lab', 'tpv_system', 'thermionic', 'direct')
+            polymer_enhanced: Whether to apply polymer enhancement
+            
+        Returns:
+            Conversion efficiency (0-1)
+        """
+        base_efficiencies = {
+            'tpv_lab': self.laboratory_tpv_efficiency,
+            'tpv_system': self.full_system_tpv_efficiency,
+            'thermionic': self.thermionic_efficiency,
+            'direct': self.direct_conversion_efficiency
+        }
+        
+        enhancement_factors = {
+            'tpv_lab': self.polymer_tpv_enhancement,
+            'tpv_system': self.polymer_tpv_enhancement,
+            'thermionic': self.polymer_thermionic_enhancement,
+            'direct': self.polymer_direct_enhancement
+        }
+        
+        base_eff = base_efficiencies.get(method, 0.05)
+        
+        if polymer_enhanced:
+            enhancement = enhancement_factors.get(method, 1.0)
+            return min(base_eff * enhancement, 1.0)  # Cap at 100%
+        else:
+            return base_eff
+
+@dataclass
+class WESTBenchmarkMetrics:
+    """WEST tokamak baseline metrics for benchmarking polymer improvements"""
+    
+    # Zero-point anchors from WEST record (February 12, 2025)
+    baseline_confinement_time_s: float = 1337.0
+    baseline_temperature_c: float = 50e6
+    baseline_heating_power_w: float = 2e6
+    
+    # Target improvements relative to WEST baseline
+    target_confinement_time_s: float = 1500.0  # > 1500 s target
+    target_temperature_c: float = 150e6  # ITER goal: 150×10⁶ °C
+    target_heating_power_reduction: float = 0.8  # Reduce to 80% of baseline (1.6 MW)
+    
+    def confinement_improvement_factor(self, achieved_time_s: float) -> float:
+        """Calculate confinement improvement factor relative to WEST"""
+        return achieved_time_s / self.baseline_confinement_time_s
+    
+    def temperature_improvement_factor(self, achieved_temp_c: float) -> float:
+        """Calculate temperature improvement factor relative to WEST"""
+        return achieved_temp_c / self.baseline_temperature_c
+    
+    def power_efficiency_factor(self, required_power_w: float) -> float:
+        """Calculate power efficiency factor (lower is better)"""
+        return required_power_w / self.baseline_heating_power_w
+    
+    def meets_targets(self, confinement_s: float, temperature_c: float, power_w: float) -> Dict[str, bool]:
+        """Check if parameters meet improvement targets"""
+        return {
+            'confinement_target': confinement_s >= self.target_confinement_time_s,
+            'temperature_target': temperature_c >= self.target_temperature_c,
+            'power_target': power_w <= (self.baseline_heating_power_w * self.target_heating_power_reduction),
+            'all_targets_met': (confinement_s >= self.target_confinement_time_s and
+                              temperature_c >= self.target_temperature_c and
+                              power_w <= (self.baseline_heating_power_w * self.target_heating_power_reduction))
+        }
+
+class RealisticAntimatterConverter:
+    """Antimatter converter with realistic energy conversion efficiencies"""
+    
+    def __init__(self, 
+                 polymer_scale_mu: float = 1.0,
+                 conversion_method: str = 'tpv_system',
+                 polymer_enhanced: bool = True):
+        """
+        Initialize realistic antimatter converter
+        
+        Args:
+            polymer_scale_mu: Polymer enhancement scale parameter
+            conversion_method: Energy conversion method
+            polymer_enhanced: Whether to use polymer-enhanced conversion
+        """
+        self.polymer_scale_mu = polymer_scale_mu
+        self.conversion_method = conversion_method
+        self.polymer_enhanced = polymer_enhanced
+        
+        self.conversion_data = EnergyConversionEfficiency()
+        self.west_benchmark = WESTBenchmarkMetrics()
+        self.c = constants.c
+    
+    def theoretical_annihilation_energy(self, antimatter_mass_kg: float) -> Dict[str, float]:
+        """Calculate theoretical energy from complete annihilation"""
+        total_mass = 2 * antimatter_mass_kg  # antimatter + matter
+        theoretical_energy_j = total_mass * self.c**2
+        theoretical_energy_kwh = theoretical_energy_j / 3.6e6
+        
+        return {
+            'antimatter_mass_kg': antimatter_mass_kg,
+            'total_annihilating_mass_kg': total_mass,
+            'theoretical_energy_j': theoretical_energy_j,
+            'theoretical_energy_kwh': theoretical_energy_kwh
+        }
+    
+    def realistic_energy_conversion(self, antimatter_mass_kg: float) -> Dict[str, float]:
+        """
+        Calculate realistic energy output accounting for conversion efficiency
+        
+        Args:
+            antimatter_mass_kg: Mass of antimatter to annihilate
+            
+        Returns:
+            Realistic energy conversion data
+        """
+        # Get theoretical energy
+        theoretical = self.theoretical_annihilation_energy(antimatter_mass_kg)
+        
+        # Get conversion efficiency
+        conversion_eff = self.conversion_data.get_conversion_efficiency(
+            self.conversion_method, 
+            self.polymer_enhanced
+        )
+        
+        # Apply conversion efficiency
+        realistic_energy_j = theoretical['theoretical_energy_j'] * conversion_eff
+        realistic_energy_kwh = theoretical['theoretical_energy_kwh'] * conversion_eff
+        
+        # Apply polymer enhancement to annihilation process (separate from conversion)
+        annihilation_enhancement = self._polymer_annihilation_enhancement()
+        
+        final_energy_j = realistic_energy_j * annihilation_enhancement
+        final_energy_kwh = realistic_energy_kwh * annihilation_enhancement
+        
+        # Calculate efficiency breakdown
+        total_efficiency = conversion_eff * annihilation_enhancement
+        
+        return {
+            'antimatter_mass_kg': antimatter_mass_kg,
+            'theoretical_energy_kwh': theoretical['theoretical_energy_kwh'],
+            'conversion_method': self.conversion_method,
+            'conversion_efficiency': conversion_eff,
+            'annihilation_enhancement': annihilation_enhancement,
+            'total_efficiency': total_efficiency,
+            'realistic_energy_j': final_energy_j,
+            'realistic_energy_kwh': final_energy_kwh,
+            'polymer_enhanced': self.polymer_enhanced,
+            'polymer_scale_mu': self.polymer_scale_mu,
+            'efficiency_loss_factor': final_energy_kwh / theoretical['theoretical_energy_kwh']
+        }
+    
+    def _polymer_annihilation_enhancement(self) -> float:
+        """Polymer enhancement factor for annihilation process (separate from conversion)"""
+        base_factor = 1.0
+        
+        # Confinement enhancement (reduces positron losses before annihilation)
+        confinement_factor = 0.15 * np.log(1 + self.polymer_scale_mu)
+        
+        # Energy capture enhancement (better containment of gamma rays)
+        capture_factor = 0.1 * self.polymer_scale_mu**0.4
+        
+        return base_factor + confinement_factor + capture_factor
+    
+    def comprehensive_cost_analysis(self, 
+                                  antimatter_mass_kg: float,
+                                  production_cost_per_gram: float = 62.5e12) -> Dict[str, float]:
+        """
+        Comprehensive cost analysis with realistic conversion efficiency
+        
+        Args:
+            antimatter_mass_kg: Mass of antimatter
+            production_cost_per_gram: Production cost ($/gram)
+            
+        Returns:
+            Complete cost analysis
+        """
+        mass_grams = antimatter_mass_kg * 1000
+        production_cost_total = mass_grams * production_cost_per_gram
+        
+        # Get realistic energy output
+        energy_data = self.realistic_energy_conversion(antimatter_mass_kg)
+        realistic_energy_kwh = energy_data['realistic_energy_kwh']
+        
+        # Cost per kWh calculation
+        cost_per_kwh = production_cost_total / realistic_energy_kwh if realistic_energy_kwh > 0 else float('inf')
+        
+        # Economic thresholds
+        grid_threshold = 0.10
+        premium_threshold = 1.00
+        space_threshold = 1000.00
+        
+        return {
+            'antimatter_mass_grams': mass_grams,
+            'production_cost_usd': production_cost_total,
+            'theoretical_energy_kwh': energy_data['theoretical_energy_kwh'],
+            'realistic_energy_kwh': realistic_energy_kwh,
+            'conversion_efficiency': energy_data['conversion_efficiency'],
+            'total_efficiency': energy_data['total_efficiency'],
+            'cost_per_kwh_usd': cost_per_kwh,
+            'grid_competitive': cost_per_kwh < grid_threshold,
+            'premium_viable': cost_per_kwh < premium_threshold,
+            'space_viable': cost_per_kwh < space_threshold,
+            'conversion_method': self.conversion_method,
+            'efficiency_loss_factor': energy_data['efficiency_loss_factor']
+        }
+    
+    def west_benchmark_comparison(self, antimatter_mass_kg: float) -> Dict[str, float]:
+        """
+        Compare antimatter system with WEST tokamak baseline
+        
+        Args:
+            antimatter_mass_kg: Mass of antimatter for comparison
+            
+        Returns:
+            Benchmark comparison data
+        """
+        # WEST baseline energy
+        west_energy_kwh = (self.west_benchmark.baseline_heating_power_w * 
+                          self.west_benchmark.baseline_confinement_time_s) / 3.6e6
+        
+        # Antimatter energy
+        energy_data = self.realistic_energy_conversion(antimatter_mass_kg)
+        antimatter_energy_kwh = energy_data['realistic_energy_kwh']
+        
+        # Energy density comparison
+        energy_ratio = antimatter_energy_kwh / west_energy_kwh if west_energy_kwh > 0 else float('inf')
+        
+        # Power density (assuming 1-hour operation for antimatter)
+        antimatter_power_w = antimatter_energy_kwh * 3.6e6  # Convert back to watts for 1 hour
+        power_ratio = antimatter_power_w / self.west_benchmark.baseline_heating_power_w
+        
+        return {
+            'west_baseline': {
+                'confinement_time_s': self.west_benchmark.baseline_confinement_time_s,
+                'temperature_c': self.west_benchmark.baseline_temperature_c,
+                'heating_power_w': self.west_benchmark.baseline_heating_power_w,
+                'total_energy_kwh': west_energy_kwh
+            },
+            'antimatter_system': {
+                'mass_kg': antimatter_mass_kg,
+                'realistic_energy_kwh': antimatter_energy_kwh,
+                'equivalent_power_w': antimatter_power_w,
+                'conversion_efficiency': energy_data['conversion_efficiency'],
+                'conversion_method': self.conversion_method
+            },
+            'comparison_metrics': {
+                'energy_ratio': energy_ratio,
+                'power_ratio': power_ratio,
+                'energy_density_advantage': antimatter_energy_kwh / antimatter_mass_kg,
+                'west_energy_density': west_energy_kwh / 1000  # Rough estimate per kg of plasma
+            }
+        }
+
+class ConversionEfficiencyPipeline:
+    """Pipeline for analyzing energy conversion efficiency impacts"""
+    
+    def __init__(self, west_baseline: WESTBaseline):
+        self.west_baseline = west_baseline
+        self.west_benchmark = WESTBenchmarkMetrics()
+        self.results = {}
+    
+    def run_conversion_method_comparison(self,
+                                       antimatter_mass_kg: float = 1e-12,
+                                       mu_range: Tuple[float, float] = (0.1, 10.0),
+                                       num_points: int = 30) -> Dict:
+        """
+        Compare different energy conversion methods
+        
+        Args:
+            antimatter_mass_kg: Test mass of antimatter
+            mu_range: Polymer scale parameter range
+            num_points: Number of analysis points
+            
+        Returns:
+            Conversion method comparison results
+        """
+        conversion_methods = ['tpv_lab', 'tpv_system', 'thermionic', 'direct']
+        mu_values = np.linspace(mu_range[0], mu_range[1], num_points)
+        
+        results = {
+            'mu_values': mu_values.tolist(),
+            'antimatter_mass_kg': antimatter_mass_kg,
+            'methods': {}
+        }
+        
+        for method in conversion_methods:
+            method_results = {
+                'realistic_energies_kwh': [],
+                'conversion_efficiencies': [],
+                'cost_per_kwh_values': [],
+                'efficiency_loss_factors': []
+            }
+            
+            for mu in mu_values:
+                # Test both polymer-enhanced and standard
+                converter_standard = RealisticAntimatterConverter(
+                    polymer_scale_mu=mu,
+                    conversion_method=method,
+                    polymer_enhanced=False
+                )
+                
+                converter_enhanced = RealisticAntimatterConverter(
+                    polymer_scale_mu=mu,
+                    conversion_method=method,
+                    polymer_enhanced=True
+                )
+                
+                # Use polymer-enhanced results for this analysis
+                energy_data = converter_enhanced.realistic_energy_conversion(antimatter_mass_kg)
+                cost_data = converter_enhanced.comprehensive_cost_analysis(antimatter_mass_kg)
+                
+                method_results['realistic_energies_kwh'].append(energy_data['realistic_energy_kwh'])
+                method_results['conversion_efficiencies'].append(energy_data['conversion_efficiency'])
+                method_results['cost_per_kwh_values'].append(cost_data['cost_per_kwh_usd'])
+                method_results['efficiency_loss_factors'].append(energy_data['efficiency_loss_factor'])
+            
+            results['methods'][method] = method_results
+        
+        self.results['conversion_comparison'] = results
+        return results
+    
+    def efficiency_impact_analysis(self, antimatter_mass_kg: float = 1e-12) -> Dict:
+        """
+        Analyze the impact of conversion efficiency on economic viability
+        
+        Args:
+            antimatter_mass_kg: Test mass for analysis
+            
+        Returns:
+            Efficiency impact analysis results
+        """
+        conversion_methods = ['tpv_lab', 'tpv_system', 'thermionic', 'direct']
+        
+        results = {
+            'theoretical_baseline': {},
+            'realistic_conversions': {},
+            'efficiency_gaps': {}
+        }
+        
+        # Get theoretical baseline
+        converter_theoretical = RealisticAntimatterConverter(polymer_scale_mu=1.0)
+        theoretical = converter_theoretical.theoretical_annihilation_energy(antimatter_mass_kg)
+        results['theoretical_baseline'] = theoretical
+        
+        # Analyze each conversion method
+        for method in conversion_methods:
+            converter = RealisticAntimatterConverter(
+                polymer_scale_mu=5.0,  # Optimistic polymer enhancement
+                conversion_method=method,
+                polymer_enhanced=True
+            )
+            
+            energy_data = converter.realistic_energy_conversion(antimatter_mass_kg)
+            cost_data = converter.comprehensive_cost_analysis(antimatter_mass_kg)
+            
+            results['realistic_conversions'][method] = {
+                'realistic_energy_kwh': energy_data['realistic_energy_kwh'],
+                'conversion_efficiency': energy_data['conversion_efficiency'],
+                'total_efficiency': energy_data['total_efficiency'],
+                'cost_per_kwh': cost_data['cost_per_kwh_usd'],
+                'efficiency_loss_factor': energy_data['efficiency_loss_factor']
+            }
+            
+            # Calculate efficiency gap
+            theoretical_cost_per_kwh = (antimatter_mass_kg * 1000 * 62.5e12) / theoretical['theoretical_energy_kwh']
+            realistic_cost_per_kwh = cost_data['cost_per_kwh_usd']
+            efficiency_penalty = realistic_cost_per_kwh / theoretical_cost_per_kwh
+            
+            results['efficiency_gaps'][method] = {
+                'theoretical_cost_per_kwh': theoretical_cost_per_kwh,
+                'realistic_cost_per_kwh': realistic_cost_per_kwh,
+                'efficiency_penalty_factor': efficiency_penalty,
+                'energy_loss_percentage': (1 - energy_data['efficiency_loss_factor']) * 100
+            }
+        
+        self.results['efficiency_impact'] = results
+        return results
+    
+    def west_benchmark_analysis(self) -> Dict:
+        """
+        Comprehensive analysis against WEST baseline with conversion efficiency
+        
+        Returns:
+            WEST benchmark analysis results
+        """
+        test_masses = [1e-15, 1e-12, 1e-9]  # fg, pg, ng
+        conversion_methods = ['tpv_system', 'thermionic', 'direct']
+        
+        results = {
+            'west_baseline_metrics': {
+                'confinement_time_s': self.west_benchmark.baseline_confinement_time_s,
+                'temperature_c': self.west_benchmark.baseline_temperature_c,
+                'heating_power_w': self.west_benchmark.baseline_heating_power_w,
+                'target_confinement_s': self.west_benchmark.target_confinement_time_s,
+                'target_temperature_c': self.west_benchmark.target_temperature_c,
+                'target_power_reduction': self.west_benchmark.target_heating_power_reduction
+            },
+            'antimatter_comparisons': {}
+        }
+        
+        for mass in test_masses:
+            mass_results = {}
+            
+            for method in conversion_methods:
+                converter = RealisticAntimatterConverter(
+                    polymer_scale_mu=5.0,
+                    conversion_method=method,
+                    polymer_enhanced=True
+                )
+                
+                benchmark_data = converter.west_benchmark_comparison(mass)
+                
+                mass_results[method] = {
+                    'energy_ratio_vs_west': benchmark_data['comparison_metrics']['energy_ratio'],
+                    'power_ratio_vs_west': benchmark_data['comparison_metrics']['power_ratio'],
+                    'realistic_energy_kwh': benchmark_data['antimatter_system']['realistic_energy_kwh'],
+                    'conversion_efficiency': benchmark_data['antimatter_system']['conversion_efficiency']
+                }
+            
+            results['antimatter_comparisons'][f'{mass*1e15:.0f}_fg'] = mass_results
+        
+        self.results['west_benchmark'] = results
+        return results
+    
+    def generate_efficiency_visualization(self, save_path: Optional[str] = None):
+        """Generate comprehensive efficiency analysis visualization"""
+        if 'conversion_comparison' not in self.results:
+            logger.error("No conversion comparison results available.")
+            return
+        
+        fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(16, 12))
+        
+        comparison_data = self.results['conversion_comparison']
+        mu_values = comparison_data['mu_values']
+        methods = comparison_data['methods']
+        
+        # Plot 1: Conversion efficiency comparison
+        for method, data in methods.items():
+            efficiencies = [eff * 100 for eff in data['conversion_efficiencies']]  # Convert to percentage
+            ax1.plot(mu_values, efficiencies, linewidth=2, label=method.replace('_', ' ').title())
+        
+        ax1.set_xlabel('Polymer Scale μ')
+        ax1.set_ylabel('Conversion Efficiency (%)')
+        ax1.set_title('Energy Conversion Efficiency vs Polymer Scale')
+        ax1.legend()
+        ax1.grid(True, alpha=0.3)
+        
+        # Plot 2: Realistic energy output
+        for method, data in methods.items():
+            ax2.semilogy(mu_values, data['realistic_energies_kwh'], linewidth=2, 
+                        label=method.replace('_', ' ').title())
+        
+        ax2.set_xlabel('Polymer Scale μ')
+        ax2.set_ylabel('Realistic Energy Output (kWh)')
+        ax2.set_title('Realistic Energy Output (with Conversion Losses)')
+        ax2.legend()
+        ax2.grid(True, alpha=0.3)
+        
+        # Plot 3: Cost per kWh comparison
+        for method, data in methods.items():
+            valid_costs = [c for c in data['cost_per_kwh_values'] if c < 1e8]  # Filter extreme values
+            valid_mu = mu_values[:len(valid_costs)]
+            
+            if valid_costs:
+                ax3.semilogy(valid_mu, valid_costs, linewidth=2, 
+                           label=method.replace('_', ' ').title())
+        
+        ax3.axhline(y=0.10, color='g', linestyle='--', alpha=0.7, label='Grid Competitive')
+        ax3.axhline(y=1.00, color='orange', linestyle='--', alpha=0.7, label='Premium Market')
+        ax3.axhline(y=1000.00, color='r', linestyle='--', alpha=0.7, label='Space Applications')
+        ax3.set_xlabel('Polymer Scale μ')
+        ax3.set_ylabel('Cost per kWh ($)')
+        ax3.set_title('Economic Impact of Conversion Efficiency')
+        ax3.legend()
+        ax3.grid(True, alpha=0.3)
+        
+        # Plot 4: Efficiency loss factors
+        for method, data in methods.items():
+            loss_percentages = [(1 - factor) * 100 for factor in data['efficiency_loss_factors']]
+            ax4.plot(mu_values, loss_percentages, linewidth=2, 
+                    label=method.replace('_', ' ').title())
+        
+        ax4.set_xlabel('Polymer Scale μ')
+        ax4.set_ylabel('Energy Loss (%)')
+        ax4.set_title('Energy Loss Due to Conversion Inefficiency')
+        ax4.legend()
+        ax4.grid(True, alpha=0.3)
+        
+        plt.tight_layout()
+        plt.suptitle('Antimatter Energy Conversion Efficiency Analysis\n' +
+                     f'Reference: WEST baseline {self.west_benchmark.baseline_confinement_time_s:.0f}s, ' +
+                     f'{self.west_benchmark.baseline_temperature_c/1e6:.0f}×10⁶°C, ' +
+                     f'{self.west_benchmark.baseline_heating_power_w/1e6:.1f}MW',
+                     fontsize=14, y=0.98)
+        
+        if save_path:
+            plt.savefig(save_path, dpi=300, bbox_inches='tight')
+            logger.info(f"Efficiency visualization saved to {save_path}")
         else:
             plt.show()
