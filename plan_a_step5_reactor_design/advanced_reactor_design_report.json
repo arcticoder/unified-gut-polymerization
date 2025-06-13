@@ -1,0 +1,654 @@
+{
+  "configuration": {
+    "trap_radius": 3.0,
+    "trap_length": 6.0,
+    "magnetic_field": 20.0,
+    "polymer_scale": 8.0,
+    "antimatter_mass_kg": 1e-06
+  },
+  "physics_performance": {
+    "pair_production_cross_section": 6.102286460844418e-25,
+    "confinement_efficiency": 0.99,
+    "conversion_efficiency": {
+      "gamma_absorption": 0.95,
+      "thermal_conversion": 0.5038057204135353,
+      "electrical_conversion": 0.95,
+      "system_efficiency": 0.9,
+      "overall_efficiency": 0.409216196405894
+    }
+  },
+  "economic_viability": {
+    "energy_analysis": {
+      "total_energy_j": 89875517873.68176,
+      "total_energy_kwh": 24965.42163157827,
+      "usable_energy_kwh": 10216.254881743887,
+      "efficiency_data": {
+        "gamma_absorption": 0.95,
+        "thermal_conversion": 0.5038057204135353,
+        "electrical_conversion": 0.95,
+        "system_efficiency": 0.9,
+        "overall_efficiency": 0.409216196405894
+      }
+    },
+    "cost_analysis": {
+      "capital_cost": 11192598872.896584,
+      "antimatter_production_cost": 62500000000.0,
+      "operational_cost": 2000000000.0,
+      "total_cost": 75692598872.89658
+    },
+    "cost_per_kwh": 7409035.869705714,
+    "target_cost": 0.1,
+    "target_achieved": "False",
+    "cost_reduction_needed": 74090358.69705714,
+    "cost_breakdown_per_kwh": {
+      "capital_per_kwh": 1095567.7009289765,
+      "antimatter_per_kwh": 6117701.713930949,
+      "operational_per_kwh": 195766.45484579034
+    },
+    "dominant_cost_factor": "antimatter_per_kwh"
+  },
+  "sensitivity_analysis": {
+    "polymer_scale": {
+      "parameter_values": [
+        1.0,
+        2.0,
+        3.0,
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0,
+        9.0,
+        10.0,
+        11.0,
+        12.0,
+        13.0,
+        14.0,
+        15.0,
+        16.0,
+        17.0,
+        18.0,
+        19.0,
+        20.0
+      ],
+      "results": [
+        {
+          "parameter_value": 1.0,
+          "cost_per_kwh": 8148057.859376737,
+          "target_achieved": "False",
+          "overall_efficiency": 0.323698115818687
+        },
+        {
+          "parameter_value": 2.0,
+          "cost_per_kwh": 7629754.604994105,
+          "target_achieved": "False",
+          "overall_efficiency": 0.346751848202947
+        },
+        {
+          "parameter_value": 3.0,
+          "cost_per_kwh": 7301926.090274312,
+          "target_achieved": "False",
+          "overall_efficiency": 0.3631087316373741
+        },
+        {
+          "parameter_value": 4.0,
+          "cost_per_kwh": 7067295.428690525,
+          "target_achieved": "False",
+          "overall_efficiency": 0.3757961161062218
+        },
+        {
+          "parameter_value": 5.0,
+          "cost_per_kwh": 6887033.05703767,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 6.0,
+          "cost_per_kwh": 6742006.388510945,
+          "target_achieved": "False",
+          "overall_efficiency": 0.3949270862999124
+        },
+        {
+          "parameter_value": 7.0,
+          "cost_per_kwh": 6621483.619312876,
+          "target_achieved": "False",
+          "overall_efficiency": 0.4025193474560612
+        },
+        {
+          "parameter_value": 8.0,
+          "cost_per_kwh": 6518887.1127009215,
+          "target_achieved": "False",
+          "overall_efficiency": 0.409216196405894
+        },
+        {
+          "parameter_value": 9.0,
+          "cost_per_kwh": 6429915.780959559,
+          "target_achieved": "False",
+          "overall_efficiency": 0.4152067319249089
+        },
+        {
+          "parameter_value": 10.0,
+          "cost_per_kwh": 6351614.5899639325,
+          "target_achieved": "False",
+          "overall_efficiency": 0.4206258304731333
+        },
+        {
+          "parameter_value": 11.0,
+          "cost_per_kwh": 6281872.435621766,
+          "target_achieved": "False",
+          "overall_efficiency": 0.4255730798403212
+        },
+        {
+          "parameter_value": 12.0,
+          "cost_per_kwh": 6219132.619363575,
+          "target_achieved": "False",
+          "overall_efficiency": 0.43012410809186935
+        },
+        {
+          "parameter_value": 13.0,
+          "cost_per_kwh": 6162216.796428711,
+          "target_achieved": "False",
+          "overall_efficiency": 0.43433770211859957
+        },
+        {
+          "parameter_value": 14.0,
+          "cost_per_kwh": 6110213.149480642,
+          "target_achieved": "False",
+          "overall_efficiency": 0.4382604643091689
+        },
+        {
+          "parameter_value": 15.0,
+          "cost_per_kwh": 6062402.717098963,
+          "target_achieved": "False",
+          "overall_efficiency": 0.4419299632747483
+        },
+        {
+          "parameter_value": 16.0,
+          "cost_per_kwh": 6018209.330482043,
+          "target_achieved": "False",
+          "overall_efficiency": 0.44537692770967624
+        },
+        {
+          "parameter_value": 17.0,
+          "cost_per_kwh": 5977164.673349874,
+          "target_achieved": "False",
+          "overall_efficiency": 0.4486268122245811
+        },
+        {
+          "parameter_value": 18.0,
+          "cost_per_kwh": 5938883.324208345,
+          "target_achieved": "False",
+          "overall_efficiency": 0.4517009392579558
+        },
+        {
+          "parameter_value": 19.0,
+          "cost_per_kwh": 5903044.562139416,
+          "target_achieved": "False",
+          "overall_efficiency": 0.454617347743596
+        },
+        {
+          "parameter_value": 20.0,
+          "cost_per_kwh": 5869378.861871667,
+          "target_achieved": "False",
+          "overall_efficiency": 0.45739143450285946
+        }
+      ]
+    },
+    "magnetic_field": {
+      "parameter_values": [
+        10.0,
+        12.105263157894736,
+        14.210526315789473,
+        16.315789473684212,
+        18.421052631578945,
+        20.526315789473685,
+        22.63157894736842,
+        24.736842105263158,
+        26.842105263157894,
+        28.94736842105263,
+        31.052631578947366,
+        33.1578947368421,
+        35.26315789473684,
+        37.368421052631575,
+        39.473684210526315,
+        41.578947368421055,
+        43.68421052631579,
+        45.78947368421053,
+        47.89473684210526,
+        50.0
+      ],
+      "results": [
+        {
+          "parameter_value": 10.0,
+          "cost_per_kwh": 6748647.215495254,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 12.105263157894736,
+          "cost_per_kwh": 6793739.076172022,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 14.210526315789473,
+          "cost_per_kwh": 6857588.063520664,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 16.315789473684212,
+          "cost_per_kwh": 6943456.286527593,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 18.421052631578945,
+          "cost_per_kwh": 7054605.85417922,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 20.526315789473685,
+          "cost_per_kwh": 7194298.875461962,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 22.63157894736842,
+          "cost_per_kwh": 7365797.459362225,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 24.736842105263158,
+          "cost_per_kwh": 7572363.714866428,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 26.842105263157894,
+          "cost_per_kwh": 7817259.750960981,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 28.94736842105263,
+          "cost_per_kwh": 8103747.676632295,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 31.052631578947366,
+          "cost_per_kwh": 8435089.600866787,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 33.1578947368421,
+          "cost_per_kwh": 8814547.632650865,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 35.26315789473684,
+          "cost_per_kwh": 9245383.880970951,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 37.368421052631575,
+          "cost_per_kwh": 9730860.454813445,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 39.473684210526315,
+          "cost_per_kwh": 10274239.463164767,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 41.578947368421055,
+          "cost_per_kwh": 10878783.015011335,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 43.68421052631579,
+          "cost_per_kwh": 11547753.21933955,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 45.78947368421053,
+          "cost_per_kwh": 12284412.185135832,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 47.89473684210526,
+          "cost_per_kwh": 13092022.02138659,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 50.0,
+          "cost_per_kwh": 13973844.837078247,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        }
+      ]
+    },
+    "antimatter_mass": {
+      "parameter_values": [
+        1e-09,
+        1.6237767391887243e-09,
+        2.6366508987303554e-09,
+        4.281332398719396e-09,
+        6.951927961775591e-09,
+        1.1288378916846883e-08,
+        1.8329807108324374e-08,
+        2.976351441631319e-08,
+        4.832930238571752e-08,
+        7.847599703514607e-08,
+        1.274274985703132e-07,
+        2.06913808111479e-07,
+        3.359818286283781e-07,
+        5.455594781168515e-07,
+        8.858667904100833e-07,
+        1.438449888287663e-06,
+        2.335721469090121e-06,
+        3.792690190732246e-06,
+        6.158482110660255e-06,
+        1e-05
+      ],
+      "results": [
+        {
+          "parameter_value": 1e-09,
+          "cost_per_kwh": 410590117.84405386,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 1.6237767391887243e-09,
+          "cost_per_kwh": 255351617.1242379,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 2.6366508987303554e-09,
+          "cost_per_kwh": 159748264.16736782,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 4.281332398719396e-09,
+          "cost_per_kwh": 100871110.27696495,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 6.951927961775591e-09,
+          "cost_per_kwh": 64611720.38090149,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 1.1288378916846883e-08,
+          "cost_per_kwh": 42281439.97906507,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 1.8329807108324374e-08,
+          "cost_per_kwh": 28529376.74099138,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 2.976351441631319e-08,
+          "cost_per_kwh": 20060193.197356865,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 4.832930238571752e-08,
+          "cost_per_kwh": 14844461.662819723,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 7.847599703514607e-08,
+          "cost_per_kwh": 11632362.727874355,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 1.274274985703132e-07,
+          "cost_per_kwh": 9654197.345021164,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 2.06913808111479e-07,
+          "cost_per_kwh": 8435947.732798282,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 3.359818286283781e-07,
+          "cost_per_kwh": 7685690.888478943,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 5.455594781168515e-07,
+          "cost_per_kwh": 7223646.553064834,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 8.858667904100833e-07,
+          "cost_per_kwh": 6939097.375666864,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 1.438449888287663e-06,
+          "cost_per_kwh": 6763858.273806015,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 2.335721469090121e-06,
+          "cost_per_kwh": 6655937.586416194,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 3.792690190732246e-06,
+          "cost_per_kwh": 6589474.824150158,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 6.158482110660255e-06,
+          "cost_per_kwh": 6548543.85090611,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 1e-05,
+          "cost_per_kwh": 6523336.584256574,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        }
+      ]
+    },
+    "trap_size": {
+      "parameter_values": [
+        1.0,
+        1.4736842105263157,
+        1.9473684210526314,
+        2.4210526315789473,
+        2.894736842105263,
+        3.3684210526315788,
+        3.8421052631578947,
+        4.315789473684211,
+        4.789473684210526,
+        5.263157894736842,
+        5.7368421052631575,
+        6.2105263157894735,
+        6.684210526315789,
+        7.157894736842105,
+        7.63157894736842,
+        8.105263157894736,
+        8.578947368421051,
+        9.052631578947368,
+        9.526315789473683,
+        10.0
+      ],
+      "results": [
+        {
+          "parameter_value": 1.0,
+          "cost_per_kwh": 6739542.883814831,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 1.4736842105263157,
+          "cost_per_kwh": 6797149.84897943,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 1.9473684210526314,
+          "cost_per_kwh": 6876819.056121961,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 2.4210526315789473,
+          "cost_per_kwh": 6978550.505242422,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 2.894736842105263,
+          "cost_per_kwh": 7102344.196340816,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 3.3684210526315788,
+          "cost_per_kwh": 7248200.129417142,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 3.8421052631578947,
+          "cost_per_kwh": 7416118.304471398,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 4.315789473684211,
+          "cost_per_kwh": 7606098.721503585,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 4.789473684210526,
+          "cost_per_kwh": 7818141.380513703,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 5.263157894736842,
+          "cost_per_kwh": 8052246.281501755,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 5.7368421052631575,
+          "cost_per_kwh": 8308413.424467737,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 6.2105263157894735,
+          "cost_per_kwh": 8586642.80941165,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 6.684210526315789,
+          "cost_per_kwh": 8886934.436333496,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 7.157894736842105,
+          "cost_per_kwh": 9209288.305233274,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 7.63157894736842,
+          "cost_per_kwh": 9553704.416110981,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 8.105263157894736,
+          "cost_per_kwh": 9920182.76896662,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 8.578947368421051,
+          "cost_per_kwh": 10308723.363800192,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 9.052631578947368,
+          "cost_per_kwh": 10719326.200611694,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 9.526315789473683,
+          "cost_per_kwh": 11151991.279401127,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        },
+        {
+          "parameter_value": 10.0,
+          "cost_per_kwh": 11606718.600168493,
+          "target_achieved": "False",
+          "overall_efficiency": 0.38616246402163407
+        }
+      ]
+    }
+  },
+  "west_comparison": {
+    "west_baseline_kwh": 742.78,
+    "reactor_output_kwh": 10216.254881743887,
+    "energy_ratio": 13.754079110562868,
+    "cost_comparison": "WEST cost not available for direct comparison"
+  },
+  "optimization_recommendations": [
+    "Primary bottleneck: Antimatter production cost. Need 74090359x cost reduction.",
+    "Research priorities: Advanced antimatter production methods, magnetic plasma confinement optimization, alternative production pathways.",
+    "Conversion efficiency (0.41) has improvement potential. Focus on thermodynamic cycle optimization and polymer enhancement.",
+    "Polymer scale (\u03bc=8.0) could be increased for better enhancement. Investigate higher-order polymer field configurations."
+  ],
+  "summary": {
+    "cost_per_kwh": 7409035.869705714,
+    "target_achieved": "False",
+    "key_limiting_factor": "antimatter_per_kwh",
+    "required_breakthrough": 74090358.69705714
+  }
+}
