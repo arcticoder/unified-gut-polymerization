@@ -609,540 +609,204 @@
   },
   "plan_b_fusion": {
     "costs_per_kwh": [
-      0.0009049303731768928,
-      0.0008970500613770478,
-      0.0008883945880984668,
-      0.0008789274211993029,
-      0.0008686291179257034,
-      0.0008575067318881475,
-      0.0008456065938615261,
-      0.00083303150932177,
-      0.0008199637591399481,
-      0.0008066958122456517,
-      0.0007936715038690541,
-      0.0007815418581306795,
-      0.0007712421721371518,
-      0.0007641010618009679,
-      0.0007619984807499393,
-      0.000767597341891781,
-      0.0007846735957440001,
-      0.0008185213448563524,
-      0.0008761480596486184,
-      0.0009649096156198064,
-      0.001084689378817876,
-      0.0008075745280642209,
-      0.000601905034313289,
-      0.0005044134725219901,
-      0.00047649410637641966,
-      0.0003582471775108213,
-      0.00024710518512457085,
-      0.00019315069277802072,
-      0.00011697327213396612,
-      7.456415998350981e-05
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      402.5133980554017,
+      165.53396181921704,
+      83.40366909813498,
+      60.27533595082605,
+      31.75723078493965,
+      17.148880575782993,
+      10.303716096198976,
+      5.222603750491193,
+      2.8128901074660604
     ],
     "optimization_results": [
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.1,
-        "optimal_conditions": {
-          "temperature_kev": 20.644689971639615,
-          "density_m3": 1.2494057368427782e+20,
-          "confinement_time_s": 3.4800882076747355,
-          "cross_section_enhancement": 2.100607858240667,
-          "classical_sigma_barns": 2.703716843411319,
-          "enhanced_sigma_barns": 5.685470337803664
-        },
-        "performance": {
-          "fusion_power_mw": 1557714.7236084365,
-          "net_power_mw": 1557683.228504308,
-          "electrical_power_mw": 595813.8349028978,
-          "q_factor": 31154.29447216873,
-          "power_density_w_m3": 1876764727.2390802
-        },
+        "error": "No net power: total=27.7, losses=31.5",
         "economics": {
-          "lcoe_usd_mwh": 0.9049303731768927,
-          "cost_per_kwh": 0.0009049303731768928,
-          "annual_energy_mwh": 4436429814.686977
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.11721022975334802,
-        "optimal_conditions": {
-          "temperature_kev": 20.649316585890254,
-          "density_m3": 1.2514038532086627e+20,
-          "confinement_time_s": 3.483797581328634,
-          "cross_section_enhancement": 2.111826780459038,
-          "classical_sigma_barns": 2.704063624442361,
-          "enhanced_sigma_barns": 5.7171139855358
-        },
-        "performance": {
-          "fusion_power_mw": 1571398.6010963763,
-          "net_power_mw": 1571367.0016341598,
-          "electrical_power_mw": 601047.8781250662,
-          "q_factor": 31427.972021927526,
-          "power_density_w_m3": 1893251326.6221402
-        },
+        "error": "No net power: total=27.9, losses=31.6",
         "economics": {
-          "lcoe_usd_mwh": 0.8970500613770478,
-          "cost_per_kwh": 0.0008970500613770478,
-          "annual_energy_mwh": 4475402500.519242
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.1373823795883263,
-        "optimal_conditions": {
-          "temperature_kev": 20.654448602054437,
-          "density_m3": 1.253623978116729e+20,
-          "confinement_time_s": 3.4879167847892356,
-          "cross_section_enhancement": 2.1243413419716997,
-          "classical_sigma_barns": 2.704448296832944,
-          "enhanced_sigma_barns": 5.752385326108404
-        },
-        "performance": {
-          "fusion_power_mw": 1586708.271453464,
-          "net_power_mw": 1586676.555829667,
-          "electrical_power_mw": 606903.7826048476,
-          "q_factor": 31734.16542906928,
-          "power_density_w_m3": 1911696712.5945346
-        },
+        "error": "No net power: total=28.2, losses=31.7",
         "economics": {
-          "lcoe_usd_mwh": 0.8883945880984667,
-          "cost_per_kwh": 0.0008883945880984668,
-          "annual_energy_mwh": 4519005565.275695
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.16102620275609392,
-        "optimal_conditions": {
-          "temperature_kev": 20.660123986442528,
-          "density_m3": 1.2560837523203026e+20,
-          "confinement_time_s": 3.492477793324259,
-          "cross_section_enhancement": 2.1382672939717176,
-          "classical_sigma_barns": 2.704873709487609,
-          "enhanced_sigma_barns": 5.791595034663018
-        },
-        "performance": {
-          "fusion_power_mw": 1603798.9262109539,
-          "net_power_mw": 1603767.0816304586,
-          "electrical_power_mw": 613440.9087236504,
-          "q_factor": 32075.978524219077,
-          "power_density_w_m3": 1932287862.9047637
-        },
+        "error": "No net power: total=28.6, losses=31.8",
         "economics": {
-          "lcoe_usd_mwh": 0.8789274211993029,
-          "cost_per_kwh": 0.0008789274211993029,
-          "annual_energy_mwh": 4567681006.3563
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.18873918221350972,
-        "optimal_conditions": {
-          "temperature_kev": 20.666373886535748,
-          "density_m3": 1.2587981123257585e+20,
-          "confinement_time_s": 3.4975074107220365,
-          "cross_section_enhancement": 2.153708605083428,
-          "classical_sigma_barns": 2.705342200817787,
-          "enhanced_sigma_barns": 5.835012418198452
-        },
-        "performance": {
-          "fusion_power_mw": 1622813.0293841306,
-          "net_power_mw": 1622781.0421873953,
-          "electrical_power_mw": 620713.7486366787,
-          "q_factor": 32456.260587682613,
-          "power_density_w_m3": 1955196420.9447358
-        },
+        "error": "No net power: total=28.9, losses=32.0",
         "economics": {
-          "lcoe_usd_mwh": 0.8686291179257034,
-          "cost_per_kwh": 0.0008686291179257034,
-          "annual_energy_mwh": 4621834572.348709
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.2212216291070449,
-        "optimal_conditions": {
-          "temperature_kev": 20.67321691150675,
-          "density_m3": 1.2617767966746903e+20,
-          "confinement_time_s": 3.5030226537341314,
-          "cross_section_enhancement": 2.170743232555998,
-          "classical_sigma_barns": 2.7058551699777262,
-          "enhanced_sigma_barns": 5.882821275377428
-        },
-        "performance": {
-          "fusion_power_mw": 1643861.6475016472,
-          "net_power_mw": 1643829.5034232535,
-          "electrical_power_mw": 628764.7850593945,
-          "q_factor": 32877.23295003294,
-          "power_density_w_m3": 1980556201.8092134
-        },
+        "error": "No net power: total=29.3, losses=32.1",
         "economics": {
-          "lcoe_usd_mwh": 0.8575067318881475,
-          "cost_per_kwh": 0.0008575067318881475,
-          "annual_energy_mwh": 4681782589.552252
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.2592943797404667,
-        "optimal_conditions": {
-          "temperature_kev": 20.680650798596723,
-          "density_m3": 1.2650206641689631e+20,
-          "confinement_time_s": 3.5090239676233725,
-          "cross_section_enhancement": 2.1894014395382806,
-          "classical_sigma_barns": 2.706412452008635,
-          "enhanced_sigma_barns": 5.935052874346008
-        },
-        "performance": {
-          "fusion_power_mw": 1666995.2689462272,
-          "net_power_mw": 1666962.9535701345,
-          "electrical_power_mw": 637613.3297405764,
-          "q_factor": 33339.905378924544,
-          "power_density_w_m3": 2008428034.8749723
-        },
+        "error": "No net power: total=29.7, losses=32.3",
         "economics": {
-          "lcoe_usd_mwh": 0.845606593861526,
-          "cost_per_kwh": 0.0008456065938615261,
-          "annual_energy_mwh": 4747668853.248332
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.30391953823131973,
-        "optimal_conditions": {
-          "temperature_kev": 20.6886404426361,
-          "density_m3": 1.2685163416704313e+20,
-          "confinement_time_s": 3.5154854028857843,
-          "cross_section_enhancement": 2.209633376592543,
-          "classical_sigma_barns": 2.707011420133145,
-          "enhanced_sigma_barns": 5.991486063368199
-        },
-        "performance": {
-          "fusion_power_mw": 1692159.2081748967,
-          "net_power_mw": 1692126.7076793313,
-          "electrical_power_mw": 647238.4656873442,
-          "q_factor": 33843.184163497936,
-          "power_density_w_m3": 2038746033.9456587
-        },
+        "error": "No net power: total=30.2, losses=32.5",
         "economics": {
-          "lcoe_usd_mwh": 0.8330315093217701,
-          "cost_per_kwh": 0.00083303150932177,
-          "annual_energy_mwh": 4819337615.507964
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.3562247890262442,
-        "optimal_conditions": {
-          "temperature_kev": 20.697100908470333,
-          "density_m3": 1.2722285469118834e+20,
-          "confinement_time_s": 3.5223405748810954,
-          "cross_section_enhancement": 2.2312614095982983,
-          "classical_sigma_barns": 2.7076457116014705,
-          "enhanced_sigma_barns": 6.05150092094631
-        },
-        "performance": {
-          "fusion_power_mw": 1719126.8034222056,
-          "net_power_mw": 1719094.1057447477,
-          "electrical_power_mw": 657553.4954473659,
-          "q_factor": 34382.53606844411,
-          "power_density_w_m3": 2071237112.556874
-        },
+        "error": "No net power: total=30.6, losses=32.7",
         "economics": {
-          "lcoe_usd_mwh": 0.8199637591399481,
-          "cost_per_kwh": 0.0008199637591399481,
-          "annual_energy_mwh": 4896143327.101087
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.41753189365604015,
-        "optimal_conditions": {
-          "temperature_kev": 20.70587359185842,
-          "density_m3": 1.2760892167005628e+20,
-          "confinement_time_s": 3.5294628410190847,
-          "cross_section_enhancement": 2.25391117038897,
-          "classical_sigma_barns": 2.7083034394025525,
-          "enhanced_sigma_barns": 6.1138681913846735
-        },
-        "performance": {
-          "fusion_power_mw": 1747401.4205799738,
-          "net_power_mw": 1747368.5171834591,
-          "electrical_power_mw": 668368.4578226731,
-          "q_factor": 34948.02841159948,
-          "power_density_w_m3": 2105302916.3614144
-        },
+        "error": "No net power: total=31.0, losses=32.9",
         "economics": {
-          "lcoe_usd_mwh": 0.8066958122456517,
-          "cost_per_kwh": 0.0008066958122456517,
-          "annual_energy_mwh": 4976671536.947624
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.4893900918477494,
-        "optimal_conditions": {
-          "temperature_kev": 20.71469314924076,
-          "density_m3": 1.279982324338984e+20,
-          "confinement_time_s": 3.5366376797738655,
-          "cross_section_enhancement": 2.276913723080195,
-          "classical_sigma_barns": 2.708964711266744,
-          "enhanced_sigma_barns": 6.176452957913232
-        },
-        "performance": {
-          "fusion_power_mw": 1776076.296121412,
-          "net_power_mw": 1776043.184604945,
-          "electrical_power_mw": 679336.5181113913,
-          "q_factor": 35521.52592242824,
-          "power_density_w_m3": 2139850959.1824238
-        },
+        "error": "No net power: total=31.4, losses=33.1",
         "economics": {
-          "lcoe_usd_mwh": 0.7936715038690542,
-          "cost_per_kwh": 0.0007936715038690541,
-          "annual_energy_mwh": 5058339713.85742
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.5736152510448679,
-        "optimal_conditions": {
-          "temperature_kev": 20.723142237784252,
-          "density_m3": 1.2837230393055805e+20,
-          "confinement_time_s": 3.543524815513534,
-          "cross_section_enhancement": 2.2991701843414565,
-          "classical_sigma_barns": 2.709598234040009,
-          "enhanced_sigma_barns": 6.235810091945092
-        },
-        "performance": {
-          "fusion_power_mw": 1803640.950792035,
-          "net_power_mw": 1803607.6386660994,
-          "electrical_power_mw": 689879.921789783,
-          "q_factor": 36072.8190158407,
-          "power_density_w_m3": 2173061386.496428
-        },
+        "error": "No net power: total=31.6, losses=33.3",
         "economics": {
-          "lcoe_usd_mwh": 0.7815418581306796,
-          "cost_per_kwh": 0.0007815418581306795,
-          "annual_energy_mwh": 5136845897.646725
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.6723357536499337,
-        "optimal_conditions": {
-          "temperature_kev": 20.730590686114283,
-          "density_m3": 1.2870298006048724e+20,
-          "confinement_time_s": 3.54960741823959,
-          "cross_section_enhancement": 2.318971136027529,
-          "classical_sigma_barns": 2.710156750201129,
-          "enhanced_sigma_barns": 6.286656864986226
-        },
-        "performance": {
-          "fusion_power_mw": 1827727.716499722,
-          "net_power_mw": 1827694.2265173732,
-          "electrical_power_mw": 699093.0416428953,
-          "q_factor": 36554.55432999444,
-          "power_density_w_m3": 2202081586.1442437
-        },
+        "error": "No net power: total=31.7, losses=33.5",
         "economics": {
-          "lcoe_usd_mwh": 0.7712421721371517,
-          "cost_per_kwh": 0.0007712421721371518,
-          "annual_energy_mwh": 5205446788.072999
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.7880462815669912,
-        "optimal_conditions": {
-          "temperature_kev": 20.736115985349702,
-          "density_m3": 1.2894882757231201e+20,
-          "confinement_time_s": 3.5541262701544065,
-          "cross_section_enhancement": 2.333769676901503,
-          "classical_sigma_barns": 2.710571074162134,
-          "enhanced_sigma_barns": 6.321237243863913
-        },
-        "performance": {
-          "fusion_power_mw": 1844809.0530713946,
-          "net_power_mw": 1844775.4305424064,
-          "electrical_power_mw": 705626.6021824705,
-          "q_factor": 36896.181061427895,
-          "power_density_w_m3": 2222661509.7245717
-        },
+        "error": "No net power: total=31.6, losses=33.6",
         "economics": {
-          "lcoe_usd_mwh": 0.7641010618009679,
-          "cost_per_kwh": 0.0007641010618009679,
-          "annual_energy_mwh": 5254095679.850676
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 0.9236708571873861,
-        "optimal_conditions": {
-          "temperature_kev": 20.738404339076865,
-          "density_m3": 1.2905078506355048e+20,
-          "confinement_time_s": 3.555999478663775,
-          "cross_section_enhancement": 2.339926250237112,
-          "classical_sigma_barns": 2.710742673660435,
-          "enhanced_sigma_barns": 6.32866741242777
-        },
-        "performance": {
-          "fusion_power_mw": 1849899.3936804358,
-          "net_power_mw": 1849865.7161028774,
-          "electrical_power_mw": 707573.6364093506,
-          "q_factor": 36997.98787360872,
-          "power_density_w_m3": 2228794450.2173924
-        },
+        "error": "No net power: total=31.1, losses=33.7",
         "economics": {
-          "lcoe_usd_mwh": 0.7619984807499393,
-          "cost_per_kwh": 0.0007619984807499393,
-          "annual_energy_mwh": 5268593296.704023
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 1.0826367338740546,
-        "optimal_conditions": {
-          "temperature_kev": 20.735639511493453,
-          "density_m3": 1.2892760843678115e+20,
-          "confinement_time_s": 3.553736360674188,
-          "cross_section_enhancement": 2.3324898134157173,
-          "classical_sigma_barns": 2.7105353445018214,
-          "enhanced_sigma_barns": 6.294516943961058
-        },
-        "performance": {
-          "fusion_power_mw": 1836406.3918747175,
-          "net_power_mw": 1836372.780796473,
-          "electrical_power_mw": 702412.5886546508,
-          "q_factor": 36728.12783749435,
-          "power_density_w_m3": 2212537821.5358043
-        },
+        "error": "No net power: total=30.2, losses=33.6",
         "economics": {
-          "lcoe_usd_mwh": 0.767597341891781,
-          "cost_per_kwh": 0.000767597341891781,
-          "annual_energy_mwh": 5230164135.12253
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 1.2689610031679222,
-        "optimal_conditions": {
-          "temperature_kev": 20.725409570368214,
-          "density_m3": 1.2847287280134909e+20,
-          "confinement_time_s": 3.545375275796381,
-          "cross_section_enhancement": 2.305179693449307,
-          "classical_sigma_barns": 2.709768245988248,
-          "enhanced_sigma_barns": 6.2012027392396325
-        },
-        "performance": {
-          "fusion_power_mw": 1796442.5647261697,
-          "net_power_mw": 1796409.1985601508,
-          "electrical_power_mw": 687126.5184492576,
-          "q_factor": 35928.851294523396,
-          "power_density_w_m3": 2164388632.2002044
-        },
+        "error": "No net power: total=29.5, losses=33.4",
         "economics": {
-          "lcoe_usd_mwh": 0.7846735957440001,
-          "cost_per_kwh": 0.0007846735957440001,
-          "annual_energy_mwh": 5116344056.373172
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 1.487352107293511,
-        "optimal_conditions": {
-          "temperature_kev": 20.7047231741721,
-          "density_m3": 1.275582275886475e+20,
-          "confinement_time_s": 3.528528033207512,
-          "cross_section_enhancement": 2.2509279147778805,
-          "classical_sigma_barns": 2.7082171856987323,
-          "enhanced_sigma_barns": 6.030330338117599
-        },
-        "performance": {
-          "fusion_power_mw": 1722156.4032640029,
-          "net_power_mw": 1722123.5269181277,
-          "electrical_power_mw": 658712.2490461839,
-          "q_factor": 34443.128065280056,
-          "power_density_w_m3": 2074887232.8481963
-        },
+        "error": "No net power: total=29.6, losses=32.9",
         "economics": {
-          "lcoe_usd_mwh": 0.8185213448563523,
-          "cost_per_kwh": 0.0008185213448563524,
-          "annual_energy_mwh": 4904771406.397885
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 1.743328822199988,
-        "optimal_conditions": {
-          "temperature_kev": 20.670388181293124,
-          "density_m3": 1.2605446316525897e+20,
-          "confinement_time_s": 3.500741740658249,
-          "cross_section_enhancement": 2.1636852807694362,
-          "classical_sigma_barns": 2.705643119552445,
-          "enhanced_sigma_barns": 5.768919452149894
-        },
-        "performance": {
-          "fusion_power_mw": 1608886.7124795574,
-          "net_power_mw": 1608854.6333448628,
-          "electrical_power_mw": 615386.89725441,
-          "q_factor": 32177.734249591147,
-          "power_density_w_m3": 1938417725.878985
-        },
+        "error": "No net power: total=29.9, losses=32.1",
         "economics": {
-          "lcoe_usd_mwh": 0.8761480596486184,
-          "cost_per_kwh": 0.0008761480596486184,
-          "annual_energy_mwh": 4582170836.956336
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 2.0433597178569416,
-        "optimal_conditions": {
-          "temperature_kev": 20.620409195459448,
-          "density_m3": 1.2389716793932548e+20,
-          "confinement_time_s": 3.460685826469939,
-          "cross_section_enhancement": 2.0427000415399044,
-          "classical_sigma_barns": 2.701897050094747,
-          "enhanced_sigma_barns": 5.422250564596436
-        },
-        "performance": {
-          "fusion_power_mw": 1460887.8482776408,
-          "net_power_mw": 1460856.8952402263,
-          "electrical_power_mw": 558777.7624293865,
-          "q_factor": 29217.756965552817,
-          "power_density_w_m3": 1760105841.2983625
-        },
+        "error": "No net power: total=29.9, losses=31.0",
         "economics": {
-          "lcoe_usd_mwh": 0.9649096156198065,
-          "cost_per_kwh": 0.0009649096156198064,
-          "annual_energy_mwh": 4160659219.049212
+          "cost_per_kwh": 10.0
         }
       },
       {
-        "success": true,
+        "success": false,
         "polymer_scale_mu": 2.395026619987486,
-        "optimal_conditions": {
-          "temperature_kev": 20.55793960483679,
-          "density_m3": 1.212525667324938e+20,
-          "confinement_time_s": 3.411263090071081,
-          "cross_section_enhancement": 1.9009460977909556,
-          "classical_sigma_barns": 2.6972161448227094,
-          "enhanced_sigma_barns": 5.03619336941008
-        },
-        "performance": {
-          "fusion_power_mw": 1299567.4157691228,
-          "net_power_mw": 1299537.8149622942,
-          "electrical_power_mw": 497073.2142230775,
-          "q_factor": 25991.348315382456,
-          "power_density_w_m3": 1565743874.42063
-        },
+        "error": "No net power: total=28.6, losses=29.6",
         "economics": {
-          "lcoe_usd_mwh": 1.084689378817876,
-          "cost_per_kwh": 0.001084689378817876,
-          "annual_energy_mwh": 3701207153.1050353
+          "cost_per_kwh": 10.0
         }
       },
       {
@@ -1157,16 +821,16 @@
           "enhanced_sigma_barns": 6.189703889047983
         },
         "performance": {
-          "fusion_power_mw": 1745499.6682034056,
-          "net_power_mw": 1745467.2185372536,
-          "electrical_power_mw": 667641.2110904994,
-          "q_factor": 34909.99336406811,
-          "power_density_w_m3": 2103011648.4378378
+          "fusion_power_mw": 35.951648625272625,
+          "net_power_mw": 3.501982473308317,
+          "electrical_power_mw": 1.3395082960404312,
+          "q_factor": 0.7190329725054525,
+          "power_density_w_m3": 43315.23930755738
         },
         "economics": {
-          "lcoe_usd_mwh": 0.8075745280642208,
-          "cost_per_kwh": 0.0008075745280642209,
-          "annual_energy_mwh": 4971256457.779859
+          "lcoe_usd_mwh": 402513.3980554017,
+          "cost_per_kwh": 402.5133980554017,
+          "annual_energy_mwh": 9973.97877231705
         }
       },
       {
@@ -1181,16 +845,16 @@
           "enhanced_sigma_barns": 7.424919908502163
         },
         "performance": {
-          "fusion_power_mw": 2341925.5799752907,
-          "net_power_mw": 2341889.1434759162,
-          "electrical_power_mw": 895772.597379538,
-          "q_factor": 46838.511599505815,
-          "power_density_w_m3": 2821597084.307579
+          "fusion_power_mw": 44.95194146129815,
+          "net_power_mw": 8.515442086749772,
+          "electrical_power_mw": 3.257156598181788,
+          "q_factor": 0.899038829225963,
+          "power_density_w_m3": 54158.965616021866
         },
         "economics": {
-          "lcoe_usd_mwh": 0.601905034313289,
-          "cost_per_kwh": 0.000601905034313289,
-          "annual_energy_mwh": 6669922760.08804
+          "lcoe_usd_mwh": 165533.96181921705,
+          "cost_per_kwh": 165.53396181921704,
+          "annual_energy_mwh": 24252.78803006159
         }
       },
       {
@@ -1205,16 +869,16 @@
           "enhanced_sigma_barns": 8.236023992464487
         },
         "performance": {
-          "fusion_power_mw": 2794561.928947794,
-          "net_power_mw": 2794522.632819525,
-          "electrical_power_mw": 1068904.9070534683,
-          "q_factor": 55891.238578955876,
-          "power_density_w_m3": 3366942083.069631
+          "fusion_power_mw": 56.197001821428685,
+          "net_power_mw": 16.900873552735717,
+          "electrical_power_mw": 6.464584133921412,
+          "q_factor": 1.1239400364285737,
+          "power_density_w_m3": 67707.23111015504
         },
         "economics": {
-          "lcoe_usd_mwh": 0.5044134725219901,
-          "cost_per_kwh": 0.0005044134725219901,
-          "annual_energy_mwh": 7959065937.920124
+          "lcoe_usd_mwh": 83403.66909813498,
+          "cost_per_kwh": 83.40366909813498,
+          "annual_energy_mwh": 48135.29346117883
         }
       },
       {
@@ -1229,16 +893,16 @@
           "enhanced_sigma_barns": 8.468115526196373
         },
         "performance": {
-          "fusion_power_mw": 2958303.4585915348,
-          "net_power_mw": 2958262.9593916577,
-          "electrical_power_mw": 1131535.5819673091,
-          "q_factor": 59166.06917183069,
-          "power_density_w_m3": 3564221034.4476323
+          "fusion_power_mw": 63.8851311709234,
+          "net_power_mw": 23.385931293883942,
+          "electrical_power_mw": 8.945118719910608,
+          "q_factor": 1.277702623418468,
+          "power_density_w_m3": 76970.0375553294
         },
         "economics": {
-          "lcoe_usd_mwh": 0.47649410637641965,
-          "cost_per_kwh": 0.00047649410637641966,
-          "annual_energy_mwh": 8425413943.328584
+          "lcoe_usd_mwh": 60275.33595082605,
+          "cost_per_kwh": 60.27533595082605,
+          "annual_energy_mwh": 66605.35398845439
         }
       },
       {
@@ -1253,16 +917,16 @@
           "enhanced_sigma_barns": 10.477502608392202
         },
         "performance": {
-          "fusion_power_mw": 3934742.7956139734,
-          "net_power_mw": 3934699.151172551,
-          "electrical_power_mw": 1505022.4253235008,
-          "q_factor": 78694.85591227947,
-          "power_density_w_m3": 4740653970.619246
+          "fusion_power_mw": 88.03102143675794,
+          "net_power_mw": 44.38658001409456,
+          "electrical_power_mw": 16.97786685539117,
+          "q_factor": 1.7606204287351588,
+          "power_density_w_m3": 106061.47161055173
         },
         "economics": {
-          "lcoe_usd_mwh": 0.3582471775108213,
-          "cost_per_kwh": 0.0003582471775108213,
-          "annual_energy_mwh": 11206396978.958786
+          "lcoe_usd_mwh": 31757.23078493965,
+          "cost_per_kwh": 31.75723078493965,
+          "annual_energy_mwh": 126417.19660524264
         }
       },
       {
@@ -1277,16 +941,16 @@
           "enhanced_sigma_barns": 13.032135823929773
         },
         "performance": {
-          "fusion_power_mw": 5704483.703807619,
-          "net_power_mw": 5704432.566039376,
-          "electrical_power_mw": 2181945.4565100614,
-          "q_factor": 114089.67407615238,
-          "power_density_w_m3": 6872871932.298336
+          "fusion_power_mw": 133.3352539058975,
+          "net_power_mw": 82.19748566284657,
+          "electrical_power_mw": 31.440538266038818,
+          "q_factor": 2.66670507811795,
+          "power_density_w_m3": 160644.8842239729
         },
         "economics": {
-          "lcoe_usd_mwh": 0.24710518512457083,
-          "cost_per_kwh": 0.00024710518512457085,
-          "annual_energy_mwh": 16246765869.173916
+          "lcoe_usd_mwh": 17148.880575782994,
+          "cost_per_kwh": 17.148880575782993,
+          "annual_energy_mwh": 234106.247928925
         }
       },
       {
@@ -1301,16 +965,16 @@
           "enhanced_sigma_barns": 15.436553588950916
         },
         "performance": {
-          "fusion_power_mw": 7297957.573818478,
-          "net_power_mw": 7297902.197440078,
-          "electrical_power_mw": 2791447.5905208294,
-          "q_factor": 145959.15147636956,
-          "power_density_w_m3": 8792719968.455997
+          "fusion_power_mw": 192.18089165575324,
+          "net_power_mw": 136.80451325534756,
+          "electrical_power_mw": 52.32772632017044,
+          "q_factor": 3.843617833115065,
+          "power_density_w_m3": 231543.24295873885
         },
         "economics": {
-          "lcoe_usd_mwh": 0.19315069277802072,
-          "cost_per_kwh": 0.00019315069277802072,
-          "annual_energy_mwh": 20785118759.018097
+          "lcoe_usd_mwh": 10303.716096198976,
+          "cost_per_kwh": 10.303716096198976,
+          "annual_energy_mwh": 389632.2501799891
         }
       },
       {
@@ -1325,16 +989,16 @@
           "enhanced_sigma_barns": 21.142045492023296
         },
         "performance": {
-          "fusion_power_mw": 12050639.41708733,
-          "net_power_mw": 12050572.233693028,
-          "electrical_power_mw": 4609343.879387584,
-          "q_factor": 241012.78834174658,
-          "power_density_w_m3": 14518842671.189554
+          "fusion_power_mw": 337.0860965949563,
+          "net_power_mw": 269.9027022927436,
+          "electrical_power_mw": 103.23778362697442,
+          "q_factor": 6.741721931899126,
+          "power_density_w_m3": 406127.8272228389
         },
         "economics": {
-          "lcoe_usd_mwh": 0.11697327213396612,
-          "cost_per_kwh": 0.00011697327213396612,
-          "annual_energy_mwh": 34321174525.91995
+          "lcoe_usd_mwh": 5222.603750491193,
+          "cost_per_kwh": 5.222603750491193,
+          "annual_energy_mwh": 768708.5368864515
         }
       },
       {
@@ -1349,16 +1013,16 @@
           "enhanced_sigma_barns": 29.2182639345497
         },
         "performance": {
-          "fusion_power_mw": 18904532.365148842,
-          "net_power_mw": 18904455.781082075,
-          "electrical_power_mw": 7230954.336263894,
-          "q_factor": 378090.64730297687,
-          "power_density_w_m3": 22776545018.25162
+          "fusion_power_mw": 577.7038444375767,
+          "net_power_mw": 501.11977766938,
+          "electrical_power_mw": 191.67831495853787,
+          "q_factor": 11.554076888751533,
+          "power_density_w_m3": 696028.7282380442
         },
         "economics": {
-          "lcoe_usd_mwh": 0.0745641599835098,
-          "cost_per_kwh": 7.456415998350981e-05,
-          "annual_energy_mwh": 53841685987.82095
+          "lcoe_usd_mwh": 2812.8901074660603,
+          "cost_per_kwh": 2.8128901074660604,
+          "annual_energy_mwh": 1427236.7331812729
         }
       }
     ]
@@ -1375,18 +1039,9 @@
       "breakthrough": null
     },
     "plan_b_crossings": {
-      "competitive": {
-        "mu_value": 0.1,
-        "cost_per_kwh": 0.0009049303731768928
-      },
-      "natural_gas": {
-        "mu_value": 0.1,
-        "cost_per_kwh": 0.0009049303731768928
-      },
-      "breakthrough": {
-        "mu_value": 0.1,
-        "cost_per_kwh": 0.0009049303731768928
-      }
+      "competitive": null,
+      "natural_gas": null,
+      "breakthrough": null
     },
     "competitive_advantage": {
       "plan_a_minimum": {
@@ -1395,10 +1050,10 @@
       },
       "plan_b_minimum": {
         "mu_value": 10.0,
-        "cost_per_kwh": 7.456415998350981e-05
+        "cost_per_kwh": 2.8128901074660604
       },
       "winner": "Plan B",
-      "cost_advantage": 2667828.3011182393
+      "cost_advantage": 2667825.488302696
     }
   }
 }

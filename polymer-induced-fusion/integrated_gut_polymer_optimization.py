@@ -421,20 +421,22 @@ class IntegratedPolymerEconomicFramework:
             T_opt = T_base * (1 + 0.1 * np.log10(max(1.0, enhancement)))
             n_opt = n_base * enhancement**0.3
             tau_opt = tau_base * enhancement**0.2
-            
-            # Ensure reasonable bounds
+              # Ensure reasonable bounds
             T_opt = np.clip(T_opt, 10.0, 50.0)
             n_opt = np.clip(n_opt, 5e19, 5e20)
             tau_opt = np.clip(tau_opt, 1.0, 10.0)
             
-            # Calculate enhanced fusion power
+            # Create reactor simulator for physics calculations
+            reactor_params = ReactorDesignParameters()
+            converter_params = ConverterParameters()
+            simulator = ReactorPhysicsSimulator(reactor_params, converter_params)
+            
+            # Calculate enhanced fusion power using correct thermal rate coefficient method
+            power_density = simulator.fusion_power_density(T_opt, n_opt, engine)  # W/m³
+            
+            # Also calculate cross-sections for logging
             classical_sigma = engine.classical_fusion_cross_section(T_opt, "D-T")
             enhanced_sigma = engine.polymer_enhanced_cross_section(T_opt, "keV", "fusion")
-            
-            # Reaction rate (simplified)
-            reaction_rate = 0.25 * n_opt * n_opt * enhanced_sigma * 1e-28 * 3e8  # reactions/m³/s
-            energy_per_reaction = 17.6e6 * 1.602e-19  # J per D-T reaction
-            power_density = reaction_rate * energy_per_reaction  # W/m³
             
             # Total power
             plasma_volume = 830.0  # m³ (ITER-scale)
