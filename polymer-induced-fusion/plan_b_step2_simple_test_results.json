@@ -1,0 +1,291 @@
+{
+  "baseline": {
+    "powers": {
+      "fusion_mw": 4.887876905859376,
+      "bremsstrahlung_mw": 49.955625,
+      "conduction_mw": 0.04298362499999999,
+      "input_mw": 50.0
+    },
+    "q_factors": {
+      "Q_fusion": 0.09775753811718753,
+      "Q_net": -0.9013549618828125,
+      "breakeven": false,
+      "ignition": "False"
+    },
+    "enhancement": 1.3375
+  },
+  "temperature_sweep": [
+    {
+      "powers": {
+        "fusion_mw": 0.3417351779,
+        "bremsstrahlung_mw": 14.042093949977689,
+        "conduction_mw": 0.011462300000000002,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.0068347035580000005,
+        "Q_net": -0.2740071754415538,
+        "breakeven": false,
+        "ignition": "False"
+      },
+      "enhancement": 1.315
+    },
+    {
+      "powers": {
+        "fusion_mw": 0.7732895351625001,
+        "bremsstrahlung_mw": 17.197982548834037,
+        "conduction_mw": 0.01719345,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.015465790703250002,
+        "Q_net": -0.3284938602734307,
+        "breakeven": false,
+        "ignition": "False"
+      },
+      "enhancement": 1.3225
+    },
+    {
+      "powers": {
+        "fusion_mw": 1.3825331912,
+        "bremsstrahlung_mw": 19.858519708175635,
+        "conduction_mw": 0.022924600000000003,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.027650663824,
+        "Q_net": -0.3695197303395127,
+        "breakeven": false,
+        "ignition": "False"
+      },
+      "enhancement": 1.33
+    },
+    {
+      "powers": {
+        "fusion_mw": 2.1723897359375,
+        "bremsstrahlung_mw": 22.2025,
+        "conduction_mw": 0.02865575,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.04344779471875001,
+        "Q_net": -0.40060220528125,
+        "breakeven": false,
+        "ignition": "False"
+      },
+      "enhancement": 1.3375
+    },
+    {
+      "powers": {
+        "fusion_mw": 3.932228449125,
+        "bremsstrahlung_mw": 24.321620166016903,
+        "conduction_mw": 0.0343869,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.07864456898250001,
+        "Q_net": -0.40778783433783805,
+        "breakeven": false,
+        "ignition": "False"
+      },
+      "enhancement": 1.345
+    },
+    {
+      "powers": {
+        "fusion_mw": 4.270975942879105,
+        "bremsstrahlung_mw": 26.27035227685385,
+        "conduction_mw": 0.040118049999999995,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.0854195188575821,
+        "Q_net": -0.4399875266794948,
+        "breakeven": false,
+        "ignition": "False"
+      },
+      "enhancement": 1.3525
+    },
+    {
+      "powers": {
+        "fusion_mw": 4.591184370140811,
+        "bremsstrahlung_mw": 28.084187899955378,
+        "conduction_mw": 0.04584920000000001,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.09182368740281621,
+        "Q_net": -0.46986007059629137,
+        "breakeven": false,
+        "ignition": "False"
+      },
+      "enhancement": 1.3599999999999999
+    },
+    {
+      "powers": {
+        "fusion_mw": 4.896541290956601,
+        "bremsstrahlung_mw": 29.78777956226345,
+        "conduction_mw": 0.05158035,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.09793082581913203,
+        "Q_net": -0.4978247654261369,
+        "breakeven": false,
+        "ignition": "False"
+      },
+      "enhancement": 1.3675
+    },
+    {
+      "powers": {
+        "fusion_mw": 5.189715249888029,
+        "bremsstrahlung_mw": 31.39907661858864,
+        "conduction_mw": 0.0573115,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.10379430499776057,
+        "Q_net": -0.5241872273740122,
+        "breakeven": false,
+        "ignition": "False"
+      },
+      "enhancement": 1.375
+    }
+  ],
+  "density_sweep": [
+    {
+      "powers": {
+        "fusion_mw": 0.39322284491249987,
+        "bremsstrahlung_mw": 2.4321620166016897,
+        "conduction_mw": 0.010874092567244403,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.007864456898249998,
+        "Q_net": -0.04077878343378379,
+        "breakeven": "False",
+        "ignition": "False"
+      },
+      "enhancement": 1.345
+    },
+    {
+      "powers": {
+        "fusion_mw": 0.6992600886648273,
+        "bremsstrahlung_mw": 4.325063636001531,
+        "conduction_mw": 0.014500835493748317,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.013985201773296546,
+        "Q_net": -0.07251607094673407,
+        "breakeven": "False",
+        "ignition": "False"
+      },
+      "enhancement": 1.345
+    },
+    {
+      "powers": {
+        "fusion_mw": 1.2434798179346538,
+        "bremsstrahlung_mw": 7.691171611009601,
+        "conduction_mw": 0.019337174915188014,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.024869596358693076,
+        "Q_net": -0.12895383586149894,
+        "breakeven": "False",
+        "ignition": "False"
+      },
+      "enhancement": 1.345
+    },
+    {
+      "powers": {
+        "fusion_mw": 2.2112545570321434,
+        "bremsstrahlung_mw": 13.677052114934263,
+        "conduction_mw": 0.02578653718689423,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.044225091140642867,
+        "Q_net": -0.22931595115804237,
+        "breakeven": "False",
+        "ignition": "False"
+      },
+      "enhancement": 1.345
+    },
+    {
+      "powers": {
+        "fusion_mw": 3.932228449125,
+        "bremsstrahlung_mw": 24.321620166016903,
+        "conduction_mw": 0.0343869,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.07864456898250001,
+        "Q_net": -0.40778783433783805,
+        "breakeven": "False",
+        "ignition": "False"
+      },
+      "enhancement": 1.345
+    },
+    {
+      "powers": {
+        "fusion_mw": 6.992600886648273,
+        "bremsstrahlung_mw": 43.2506363600153,
+        "conduction_mw": 0.045855668135657,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.13985201773296546,
+        "Q_net": -0.7251607094673406,
+        "breakeven": "False",
+        "ignition": "False"
+      },
+      "enhancement": 1.345
+    },
+    {
+      "powers": {
+        "fusion_mw": 12.434798179346538,
+        "bremsstrahlung_mw": 76.91171611009601,
+        "conduction_mw": 0.06114951624506743,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.24869596358693077,
+        "Q_net": -1.2895383586149893,
+        "breakeven": "False",
+        "ignition": "False"
+      },
+      "enhancement": 1.345
+    },
+    {
+      "powers": {
+        "fusion_mw": 22.112545570321437,
+        "bremsstrahlung_mw": 136.7705211493426,
+        "conduction_mw": 0.08154419047921678,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.44225091140642875,
+        "Q_net": -2.2931595115804235,
+        "breakeven": "False",
+        "ignition": "False"
+      },
+      "enhancement": 1.345
+    },
+    {
+      "powers": {
+        "fusion_mw": 39.322284491249995,
+        "bremsstrahlung_mw": 243.216201660169,
+        "conduction_mw": 0.10874092567244405,
+        "input_mw": 50.0
+      },
+      "q_factors": {
+        "Q_fusion": 0.7864456898249998,
+        "Q_net": -4.077878343378381,
+        "breakeven": "False",
+        "ignition": "False"
+      },
+      "enhancement": 1.345
+    }
+  ]
+}
