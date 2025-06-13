@@ -18,6 +18,7 @@ from dataclasses import dataclass
 from typing import Dict, List, Tuple, Optional
 import json
 import logging
+from datetime import datetime
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -1418,3 +1419,215 @@ class ConversionEfficiencyPipeline:
             logger.info(f"Efficiency visualization saved to {save_path}")
         else:
             plt.show()
+
+# Plan A Step 4: Net kWh Cost Calculation
+# =====================================
+
+class NetCostCalculator:
+    """
+    Plan A Step 4: Net kWh cost calculator using the specific formula
+    Cost ≈ $2,500/η per kWh where η is conversion efficiency
+    """
+    
+    def __init__(self):
+        # Constants from Step 4 formula
+        self.antimatter_cost_per_gram = 6.25e13  # $62.5 trillion per gram
+        self.theoretical_energy_per_gram = 2.5e10  # kWh per gram theoretical
+        self.cost_efficiency_factor = 2500.0  # $2,500/η coefficient
+        
+        # Market thresholds for comparison
+        self.market_thresholds = {
+            'grid_competitive': 0.10,
+            'premium_residential': 0.30,
+            'premium_industrial': 1.00,
+            'space_applications': 1000.00,
+            'ultra_premium': 10000.00
+        }
+    
+    def calculate_net_cost_per_kwh(self, efficiency: float) -> Dict[str, float]:
+        """Calculate net cost per kWh using Step 4 formula"""
+        if efficiency <= 0:
+            return {
+                'efficiency': efficiency,
+                'cost_per_kwh_formula': float('inf'),
+                'cost_per_kwh_detailed': float('inf')
+            }
+        
+        # Step 4 formula: Cost ≈ $2,500/η per kWh
+        cost_formula = self.cost_efficiency_factor / efficiency
+        
+        # Detailed calculation for verification
+        realistic_energy_per_gram = self.theoretical_energy_per_gram * efficiency
+        cost_detailed = self.antimatter_cost_per_gram / realistic_energy_per_gram
+        
+        return {
+            'efficiency': efficiency,
+            'cost_per_kwh_formula': cost_formula,
+            'cost_per_kwh_detailed': cost_detailed,
+            'theoretical_energy_kwh_per_gram': self.theoretical_energy_per_gram,
+            'realistic_energy_kwh_per_gram': realistic_energy_per_gram,
+            'production_cost_per_gram': self.antimatter_cost_per_gram,
+            'formula_verification': abs(cost_formula - cost_detailed) < 1e-6
+        }
+    
+    def analyze_efficiency_requirements(self) -> Dict[str, Dict]:
+        """Analyze efficiency requirements for different market segments"""
+        requirements = {}
+        
+        for threshold_name, threshold_cost in self.market_thresholds.items():
+            required_eta = self.cost_efficiency_factor / threshold_cost
+            
+            requirements[threshold_name] = {
+                'threshold_cost_per_kwh': threshold_cost,
+                'required_efficiency': required_eta,
+                'required_efficiency_percent': required_eta * 100,
+                'achievable': required_eta <= 1.0,
+                'physically_possible': required_eta <= 1.0
+            }
+        
+        return requirements
+
+class CompletePlanAPipeline:
+    """Complete Plan A pipeline integrating all four steps"""
+    
+    def __init__(self, west_baseline: WESTBaseline):
+        self.west_baseline = west_baseline
+        self.results = {}
+        
+        # Initialize all step calculators
+        self.step1_pipeline = PolymerMassEnergyPipeline(west_baseline)
+        self.step2_pipeline = AntimatterProductionPipeline(west_baseline) 
+        self.step3_pipeline = ConversionEfficiencyPipeline(west_baseline)
+        self.step4_calculator = NetCostCalculator()
+    
+    def run_complete_analysis(self, 
+                            mu_range: Tuple[float, float] = (0.1, 10.0),
+                            num_points: int = 50,
+                            test_masses: List[float] = None,
+                            antimatter_masses: List[float] = None) -> Dict:
+        """Run complete Plan A analysis with all four steps"""
+        
+        if test_masses is None:
+            test_masses = [1e-6, 1e-3, 1e-1]  # μg, mg, 100mg
+        if antimatter_masses is None:
+            antimatter_masses = [1e-15, 1e-12, 1e-9]  # fg, pg, ng
+        
+        logger.info("Running Complete Plan A Analysis (Steps 1-4)")
+        
+        # Step 1: Theoretical energy density
+        logger.info("Step 1: Theoretical energy density analysis")
+        step1_results = {}
+        for mass in test_masses:
+            pipeline_results = self.step1_pipeline.run_polymer_scale_sweep(
+                mu_range=mu_range, num_points=num_points, mass_kg=mass
+            )
+            step1_results[f'mass_{mass*1e6:.0f}mg'] = pipeline_results
+        
+        # Step 2: Antimatter production costs
+        logger.info("Step 2: Antimatter production cost analysis")
+        step2_results = {}
+        for mass in antimatter_masses:
+            cost_sweep = self.step2_pipeline.run_cost_optimization_sweep(
+                mu_range=mu_range, num_points=num_points, antimatter_mass_kg=mass
+            )
+            step2_results[f'mass_{mass*1e15:.0f}fg'] = cost_sweep
+        
+        # Step 3: Energy conversion efficiency
+        logger.info("Step 3: Energy conversion efficiency analysis")
+        step3_results = self.step3_pipeline.run_conversion_method_comparison(
+            antimatter_mass_kg=1e-12, mu_range=mu_range, num_points=num_points
+        )
+        
+        # Step 4: Net kWh cost calculation
+        logger.info("Step 4: Net kWh cost calculation")
+        step4_results = {}
+        
+        # Analyze all conversion methods from Step 3
+        conversion_methods = {
+            'tpv_system': {'base': 0.05, 'enhanced': 0.075},
+            'tpv_lab': {'base': 0.35, 'enhanced': 0.525},
+            'thermionic': {'base': 0.15, 'enhanced': 0.195},
+            'direct': {'base': 0.25, 'enhanced': 0.50}
+        }
+        
+        for method, efficiencies in conversion_methods.items():
+            step4_results[method] = {
+                'standard': self.step4_calculator.calculate_net_cost_per_kwh(efficiencies['base']),
+                'enhanced': self.step4_calculator.calculate_net_cost_per_kwh(efficiencies['enhanced'])
+            }
+        
+        # Efficiency requirements analysis
+        step4_results['market_requirements'] = self.step4_calculator.analyze_efficiency_requirements()
+        
+        # Integrated results
+        complete_results = {
+            'metadata': {
+                'analysis_date': datetime.now().isoformat(),
+                'west_baseline': {
+                    'confinement_time_s': self.west_baseline.confinement_time,
+                    'plasma_temperature_c': self.west_baseline.plasma_temperature,
+                    'heating_power_w': self.west_baseline.heating_power,
+                    'total_energy_kwh': (self.west_baseline.heating_power * self.west_baseline.confinement_time) / 3.6e6
+                },
+                'analysis_scope': 'Complete Plan A: Steps 1-4'
+            },
+            'step1_theoretical': step1_results,
+            'step2_antimatter': step2_results,
+            'step3_conversion': step3_results,
+            'step4_net_cost': step4_results,
+            'integrated_conclusions': self._generate_integrated_conclusions(step1_results, step2_results, step3_results, step4_results)
+        }
+        
+        self.results = complete_results
+        return complete_results
+    
+    def _generate_integrated_conclusions(self, step1, step2, step3, step4) -> Dict:
+        """Generate integrated conclusions across all steps"""
+        
+        # Find best case scenario
+        best_method = 'direct'  # Direct conversion typically best
+        best_cost = step4[best_method]['enhanced']['cost_per_kwh_formula']
+        best_efficiency = 0.50  # 50% for polymer-enhanced direct conversion
+        
+        # Economic viability assessment
+        grid_competitive = best_cost < 0.10
+        space_viable = best_cost < 1000.00
+        ultra_premium_viable = best_cost < 10000.00
+        
+        return {
+            'economic_viability': {
+                'best_case_cost_per_kwh': best_cost,
+                'best_conversion_method': best_method,
+                'grid_competitive': grid_competitive,
+                'space_applications_viable': space_viable,
+                'ultra_premium_viable': ultra_premium_viable,
+                'economic_gap_to_grid': best_cost / 0.10,
+                'economic_gap_to_space': best_cost / 1000.00 if not space_viable else 1.0
+            },
+            'technical_assessment': {
+                'polymer_enhancement_critical': True,
+                'conversion_efficiency_bottleneck': True,
+                'antimatter_cost_prohibitive': True,
+                'fundamental_physics_limits': True
+            },
+            'west_comparison': {
+                'west_energy_kwh': (self.west_baseline.heating_power * self.west_baseline.confinement_time) / 3.6e6,
+                'west_cost_equivalent': 0.10,  # Grid cost
+                'antimatter_competitive_impossible': True,
+                'efficiency_gap_for_parity': 2500.0 / 0.10  # Required efficiency for grid parity
+            },
+            'research_priorities': [
+                'Fundamental breakthrough in conversion efficiency (>80%)',
+                'Revolutionary antimatter production cost reduction (>99.99%)',
+                'Alternative high-value applications (propulsion, specialized physics)',
+                'Focus shift away from terrestrial energy applications'
+            ],
+            'final_assessment': {
+                'plan_a_viable_for_grid': False,
+                'plan_a_viable_for_space': False,
+                'plan_a_viable_for_specialized': ultra_premium_viable,
+                'recommended_pathway': 'Focus on Plan B (Polymer-Enhanced Fusion) or alternative approaches'
+            }
+        }
+
+# ...existing code...
