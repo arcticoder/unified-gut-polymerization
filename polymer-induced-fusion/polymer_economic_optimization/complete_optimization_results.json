@@ -1,0 +1,915 @@
+{
+  "polymer_scales": [
+    0.1,
+    0.11721022975334802,
+    0.1373823795883263,
+    0.16102620275609392,
+    0.18873918221350972,
+    0.2212216291070449,
+    0.2592943797404667,
+    0.30391953823131973,
+    0.3562247890262442,
+    0.41753189365604015,
+    0.4893900918477494,
+    0.5736152510448679,
+    0.6723357536499337,
+    0.7880462815669912,
+    0.9236708571873861,
+    1.0826367338740546,
+    1.2689610031679222,
+    1.487352107293511,
+    1.743328822199988,
+    2.0433597178569416,
+    2.395026619987486,
+    2.807216203941177,
+    3.2903445623126677,
+    3.856620421163472,
+    4.520353656360243,
+    5.298316906283707,
+    6.2101694189156165,
+    7.27895384398315,
+    8.531678524172806,
+    10.0
+  ],
+  "plan_a_antimatter": {
+    "costs_per_kwh": [
+      2667828.3011928033,
+      2675919.717738519,
+      2687025.801681468,
+      2702263.3444984495,
+      2723155.680054697,
+      2751771.87895657,
+      2790901.73449425,
+      2844257.7520611505,
+      2916660.4625131437,
+      3014070.565500779,
+      3143102.1318049356,
+      3309138.6388464323,
+      3511249.8633297286,
+      3731343.6163709457,
+      3917106.9179058606,
+      3922278.077336499,
+      3808740.667523224,
+      3776914.3676369,
+      3870608.9474362144,
+      3956685.5134029137,
+      3876737.4040066665,
+      3930667.465479428,
+      3921455.927530581,
+      3949358.1052580816,
+      3926350.4616987295,
+      3941848.5365539854,
+      3951783.196051676,
+      3950634.759436853,
+      3948689.246494769,
+      3962742.5819084165
+    ],
+    "optimization_results": [
+      {
+        "success": true,
+        "polymer_scale_mu": 0.1,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 1.0397669917871604,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 1.0397669917871604,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 60109621187891.79,
+          "cost_per_kwh": 2667828.3011928033
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 0.11721022975334802,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 1.0366229558187918,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 1.0366229558187918,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 60291931265050.42,
+          "cost_per_kwh": 2675919.717738519
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 0.1373823795883263,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 1.0323383592372084,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 1.0323383592372084,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 60542165696701.47,
+          "cost_per_kwh": 2687025.801681468
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 0.16102620275609392,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 1.0265172019534394,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 1.0265172019534394,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 60885487238853.76,
+          "cost_per_kwh": 2702263.3444984495
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 0.18873918221350972,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 1.0186416544793995,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 1.0186416544793995,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 61356218573195.97,
+          "cost_per_kwh": 2723155.680054697
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 0.2212216291070449,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 1.0080486062630014,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 1.0080486062630014,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 62000978535844.19,
+          "cost_per_kwh": 2751771.87895657
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 0.2592943797404667,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.9939152543608146,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.9939152543608146,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 62882624776891.72,
+          "cost_per_kwh": 2790901.73449425
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 0.30391953823131973,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.975270193190372,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.975270193190372,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 64084804843205.18,
+          "cost_per_kwh": 2844257.7520611505
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 0.3562247890262442,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.951060242694736,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.951060242694736,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 65716131528022.22,
+          "cost_per_kwh": 2916660.4625131437
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 0.41753189365604015,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.920323445338783,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.920323445338783,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 67910907101788.484,
+          "cost_per_kwh": 3014070.565500779
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 0.4893900918477494,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.8825420527276853,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.8825420527276853,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 70818155131339.48,
+          "cost_per_kwh": 3143102.1318049356
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 0.5736152510448679,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.8382603783269961,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.8382603783269961,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 74559172323923.73,
+          "cost_per_kwh": 3309138.6388464323
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 0.6723357536499337,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.7900092318424115,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.7900092318424115,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 79112999545893.03,
+          "cost_per_kwh": 3511249.8633297286
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 0.7880462815669912,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.7434104420631643,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.7434104420631643,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 84071996388086.31,
+          "cost_per_kwh": 3731343.6163709457
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 0.9236708571873861,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.708155244539219,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.708155244539219,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 88257483767796.39,
+          "cost_per_kwh": 3917106.9179058606
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 1.0826367338740546,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.7072216076070712,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.7072216076070712,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 88373996676194.16,
+          "cost_per_kwh": 3922278.077336499
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 1.2689610031679222,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.7283036702889346,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.7283036702889346,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 85815852026675.67,
+          "cost_per_kwh": 3808740.667523224
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 1.487352107293511,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.7344407464211183,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.7344407464211183,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 85098764338114.97,
+          "cost_per_kwh": 3776914.3676369
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 1.743328822199988,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.7166623766457367,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.7166623766457367,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 87209824370193.27,
+          "cost_per_kwh": 3870608.9474362144
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 2.0433597178569416,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.7010715908402345,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.7010715908402345,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 89149240700359.47,
+          "cost_per_kwh": 3956685.5134029137
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 2.395026619987486,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.715529456410693,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.715529456410693,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 87347906420957.78,
+          "cost_per_kwh": 3876737.4040066665
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 2.807216203941177,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.7057121549196105,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.7057121549196105,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 88563020438721.98,
+          "cost_per_kwh": 3930667.465479428
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 3.2903445623126677,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.707369879605579,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.707369879605579,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 88355472578008.64,
+          "cost_per_kwh": 3921455.927530581
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 3.856620421163472,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.7023723180844909,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.7023723180844909,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 88984144720352.8,
+          "cost_per_kwh": 3949358.1052580816
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 4.520353656360243,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.7064880820994667,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.7064880820994667,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 88465752761559.83,
+          "cost_per_kwh": 3926350.4616987295
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 5.298316906283707,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.7037103992232252,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.7037103992232252,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 88814944427408.22,
+          "cost_per_kwh": 3941848.5365539854
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 6.2101694189156165,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.70194129326411,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.70194129326411,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 89038785151629.44,
+          "cost_per_kwh": 3951783.196051676
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 7.27895384398315,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.7021453453042826,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.7021453453042826,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 89012909389743.11,
+          "cost_per_kwh": 3950634.759436853
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 8.531678524172806,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.7024912912046156,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.7024912912046156,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 88969074467565.94,
+          "cost_per_kwh": 3948689.246494769
+        }
+      },
+      {
+        "success": true,
+        "polymer_scale_mu": 10.0,
+        "optimal_conditions": {
+          "antimatter_mass_kg": 1e-06,
+          "production_enhancement": 0.7,
+          "conversion_efficiency": 0.9025
+        },
+        "performance": {
+          "energy_density_kwh_kg": 24965421631.578266,
+          "production_cost_reduction": 0.7,
+          "theoretical_power_mw": 1000
+        },
+        "economics": {
+          "production_cost_usd_gram": 89285714285714.3,
+          "cost_per_kwh": 3962742.5819084165
+        }
+      }
+    ]
+  },
+  "plan_b_fusion": {
+    "costs_per_kwh": [
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0,
+      10.0
+    ],
+    "optimization_results": [
+      {
+        "success": false,
+        "polymer_scale_mu": 0.1,
+        "error": "No net power: total=0.0, losses=20.3",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 0.11721022975334802,
+        "error": "No net power: total=0.0, losses=20.3",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 0.1373823795883263,
+        "error": "No net power: total=0.0, losses=20.3",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 0.16102620275609392,
+        "error": "No net power: total=0.0, losses=20.2",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 0.18873918221350972,
+        "error": "No net power: total=0.0, losses=20.1",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 0.2212216291070449,
+        "error": "No net power: total=0.0, losses=20.0",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 0.2592943797404667,
+        "error": "No net power: total=0.0, losses=19.8",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 0.30391953823131973,
+        "error": "No net power: total=0.0, losses=19.6",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 0.3562247890262442,
+        "error": "No net power: total=0.0, losses=19.3",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 0.41753189365604015,
+        "error": "No net power: total=0.0, losses=18.9",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 0.4893900918477494,
+        "error": "No net power: total=0.0, losses=18.4",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 0.5736152510448679,
+        "error": "No net power: total=0.0, losses=17.9",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 0.6723357536499337,
+        "error": "No net power: total=0.0, losses=17.2",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 0.7880462815669912,
+        "error": "No net power: total=0.0, losses=16.6",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 0.9236708571873861,
+        "error": "No net power: total=0.0, losses=16.1",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 1.0826367338740546,
+        "error": "No net power: total=0.0, losses=16.1",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 1.2689610031679222,
+        "error": "No net power: total=0.0, losses=16.4",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 1.487352107293511,
+        "error": "No net power: total=0.0, losses=16.5",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 1.743328822199988,
+        "error": "No net power: total=0.0, losses=16.3",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 2.0433597178569416,
+        "error": "No net power: total=0.0, losses=16.0",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 2.395026619987486,
+        "error": "No net power: total=0.0, losses=16.2",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 2.807216203941177,
+        "error": "No net power: total=0.0, losses=16.1",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 3.2903445623126677,
+        "error": "No net power: total=0.0, losses=16.1",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 3.856620421163472,
+        "error": "No net power: total=0.0, losses=16.1",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 4.520353656360243,
+        "error": "No net power: total=0.0, losses=16.1",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 5.298316906283707,
+        "error": "No net power: total=0.0, losses=16.1",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 6.2101694189156165,
+        "error": "No net power: total=0.0, losses=16.1",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 7.27895384398315,
+        "error": "No net power: total=0.0, losses=16.1",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 8.531678524172806,
+        "error": "No net power: total=0.0, losses=16.1",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      },
+      {
+        "success": false,
+        "polymer_scale_mu": 10.0,
+        "error": "No net power: total=0.0, losses=16.0",
+        "economics": {
+          "cost_per_kwh": 10.0
+        }
+      }
+    ]
+  },
+  "economic_analysis": {
+    "thresholds": {
+      "competitive": 0.15,
+      "natural_gas": 0.08,
+      "breakthrough": 0.05
+    },
+    "plan_a_crossings": {
+      "competitive": null,
+      "natural_gas": null,
+      "breakthrough": null
+    },
+    "plan_b_crossings": {
+      "competitive": null,
+      "natural_gas": null,
+      "breakthrough": null
+    },
+    "competitive_advantage": {
+      "plan_a_minimum": {
+        "mu_value": 0.1,
+        "cost_per_kwh": 2667828.3011928033
+      },
+      "plan_b_minimum": {
+        "mu_value": 0.1,
+        "cost_per_kwh": 10.0
+      },
+      "winner": "Plan B",
+      "cost_advantage": 2667818.3011928033
+    }
+  }
+}
