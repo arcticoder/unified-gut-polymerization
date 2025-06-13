@@ -26,10 +26,14 @@ pip install -r requirements.txt
 python main.py --demo --plan unified
 ```
 
-## Usage
+## Key Commands
 
-### Quick Start
+### Quick Antimatter Analysis
+```bash
+python antimatter_cost_analysis.py
+```
 
+### Regular Analysis Commands
 Run unified analysis with default parameters:
 ```bash
 python main.py --plan unified --visualize --export-report
@@ -82,14 +86,17 @@ python main.py --plan b --reactor-cost 15e9
 Implements direct mass-to-energy conversion with polymer enhancement:
 
 - **Core Physics**: E = mc² with polymer enhancement factors
-- **Economic Analysis**: Cost per kWh calculations
+- **Antimatter Analysis**: Production cost assessment based on NASA data ($62.5T/gram)
+- **Economic Analysis**: Cost per kWh calculations for both regular matter and antimatter
 - **Optimization**: Polymer scale parameter sweeps
 - **Benchmarking**: Comparison with WEST energy metrics
 
 Key Features:
 - Theoretical energy density: 2.5×10¹⁰ kWh per gram (enhanced)
+- Antimatter production costs: Contemporary facility analysis
 - Economic viability threshold: $0.10/kWh
 - Polymer enhancement scaling models
+- Production efficiency requirements (10⁷× improvement needed for antimatter)
 
 ### Plan B: Polymer-Enhanced Fusion (`plan_b_polymer_fusion.py`)
 
