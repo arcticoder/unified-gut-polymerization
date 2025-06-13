@@ -1,9 +1,0 @@
-"""
-Required packages for polymer-enhanced energy research
-"""
-
-numpy>=1.21.0
-scipy>=1.7.0
-matplotlib>=3.5.0
-dataclasses>=0.7.0 ; python_version < "3.7"
-typing_extensions>=4.0.0 ; python_version < "3.8"
