@@ -2,6 +2,20 @@
 
 This repository implements a comprehensive theoretical and computational framework for applying polymer quantization to Grand Unified Theories (GUTs). By extending the closed-form SU(2) recoupling machinery to unified gauge groups (SU(5), SO(10), E6), this framework enables simultaneous enhancement of quantum inequality violations across all charge sectors.
 
+## Recent Updates (June 2025)
+
+**🔄 Repository Reorganization Complete**
+- **Fusion Code Migration**: All polymer-induced-fusion code has been successfully migrated to the dedicated [`polymer-fusion-framework`](https://github.com/arcticoder/polymer-fusion-framework) repository
+- **Focused Scope**: This repository now exclusively focuses on fundamental GUT polymerization theory and mathematics
+- **Enhanced Integration**: Maintains seamless integration with [`warp-bubble-optimizer`](https://github.com/arcticoder/warp-bubble-optimizer) for phenomenological applications
+
+**🚀 Latest Developments**
+- **Platinum Road Deliverables**: Complete implementation of platinum-road parameter validation and testing framework
+- **3D Integration**: Advanced 3D parameter space exploration with comprehensive validation
+- **QFT-ANEC Restoration**: Restored and enhanced QFT averaged null energy condition framework
+- **Instanton Validation**: Complete validation of polymer-modified instanton calculations with uncertainty quantification
+- **Enhanced Documentation**: Comprehensive documentation updates and integration summaries
+
 ## Key Features
 
 - **Unified Gauge Polymerization**: Apply polymer quantization directly to GUT gauge fields rather than individual Standard Model sectors
@@ -48,22 +62,38 @@ Where Λ_G is the characteristic scale of the gauge group and Φ_inst is the ins
 ## Repository Structure
 
 - `unified_gut_polymerization/`: Core implementation modules
-  - `core.py`: Core numerical implementation
+  - `core.py`: Core numerical implementation with unified gauge polymerization
   - `recoupling.py`: Symbolic derivation of GUT recoupling coefficients
   - `taylor_extraction.py`: Taylor extraction to hypergeometric product mapping
   - `running_coupling.py`: Running coupling and instanton effects
+  - `parameter_scan.py`: Advanced parameter space exploration
+  - `platinum_road_*.py`: Platinum road deliverable implementations
+  - `restore_qft_anec_framework.py`: QFT-ANEC framework restoration
+- `gut_unified_polymerization/`: Alternative core implementation
+  - `core.py`: Unified gauge polymerization with GUT group support
 - `docs/`: Mathematical derivations and documentation
   - `gut_polymer_core.tex`: Mathematical derivations for GUT polymerization
   - `taylor_extraction_su5.tex`: Self-contained SU(5) Taylor extraction
   - `unified_polymerized_feynman_rules.tex`: Side-by-side comparison of classical vs polymerized Feynman rules
   - `running_coupling_instantons.tex`: Derivation of running coupling and instanton formulas with GUT constants
+  - `advanced_parameter_scan_visualization.tex`: Advanced visualization techniques
+  - `high_resolution_parameter_scans.tex`: High-resolution scanning methodologies
 - `examples/`: Usage examples and demonstration scripts
   - `demo_unified_gut_polymerization.py`: Parameter scans and plots
   - `advanced_lqg_integration.py`: Integration with LQG code
   - `symbolic_gut_recoupling.py`: Demonstrates symbolic derivation
   - `polymerized_feynman_rules_demo.py`: Numerical demonstration of polymerized propagator and vertices
   - `running_coupling_demo.py`: Visualization of running coupling and instanton rates
+  - `high_resolution_parameter_scan.py`: Advanced parameter scanning demonstration
 - `tests/`: Validation and testing suite
+- `plan_a_step5_reactor_design/`: Advanced reactor design analysis and validation
+
+## Connected Repositories
+
+This repository is part of a connected ecosystem of theoretical physics research:
+
+- **[warp-bubble-optimizer](https://github.com/arcticoder/warp-bubble-optimizer)**: Phenomenological applications and warp drive physics
+- **[polymer-fusion-framework](https://github.com/arcticoder/polymer-fusion-framework)**: Dedicated fusion research (migrated from this repo)
 
 ## Installation
 
@@ -89,12 +119,20 @@ gut_poly = UnifiedGaugePolymerization(config)
 enhancements = gut_poly.unified_cross_section_enhancement(center_of_mass_energy=1000.0)
 print(f"Total multiplicative enhancement: {enhancements['total_multiplicative']:.2e}x")
 
+# Generate comprehensive enhancement plots
+fig = gut_poly.plot_enhancement_spectra(save_path="enhancement_analysis.png")
+
 # Running coupling and instanton calculations
 rc_calculator = RunningCouplingInstanton(group="SU5")
 coupling_at_1TeV = rc_calculator.running_coupling(energy=1e3)
 instanton_rate = rc_calculator.instanton_rate(coupling=coupling_at_1TeV, mu=0.1)
 print(f"SU(5) coupling at 1 TeV: {coupling_at_1TeV:.5f}")
 print(f"Polymerized instanton rate: {instanton_rate:.2e}")
+
+# Advanced parameter space exploration
+from unified_gut_polymerization.parameter_scan import ParameterSpaceScan
+scanner = ParameterSpaceScan(config)
+results = scanner.platinum_road_scan()
 ```
 
 ## Dependencies
@@ -102,6 +140,10 @@ print(f"Polymerized instanton rate: {instanton_rate:.2e}")
 - NumPy, SciPy, SymPy
 - Matplotlib
 - Unified-LQG package (for LQG integration)
+
+## Migration Notice
+
+**🔄 Repository Reorganization**: All fusion-related code has been migrated to the dedicated [`polymer-fusion-framework`](https://github.com/arcticoder/polymer-fusion-framework) repository as of June 2025. This repository now focuses exclusively on fundamental GUT polymerization theory.
 
 ## References
 
