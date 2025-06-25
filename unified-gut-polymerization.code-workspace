@@ -1,25 +1,25 @@
 {
-  "settings": {
-    "files.exclude": {
-      "**/venv": true,
-      "**/.pytest_cache": true,
-      "**/node_modules": true,
-      "**/__pycache__": true,
-      "**/.git": true,
-      "**/.venv": true
-    }
-  },
-  "folders": [
-    {
-      "name": "unified-gut-polymerization",
-      "path": "."
-    }
-  ],
-  "extensions": {
-    "recommendations": [
-      "ms-python.python",
-      "ms-vscode.cpptools",
-      "james-yu.latex-workshop"
-    ]
-  }
+	"folders": [
+		{
+			"path": ".",
+			"name": "unified-gut-polymerization"
+		},
+		{
+			"path": "../unified-lqg",
+			"name": "unified-lqg"
+		},
+		{
+			"path": "../unified-lqg-qft",
+			"name": "unified-lqg-qft"
+		},
+		{
+			"path": "../polymer-fusion-framework",
+			"name": "polymer-fusion-framework"
+		},
+		{
+			"path": "../lqg-anec-framework",
+			"name": "lqg-anec-framework"
+		}
+	],
+	"settings": {}
 }

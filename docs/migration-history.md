@@ -1,14 +1,13 @@
-# Repository Migration Notice
+# Repository Migration History
 
-## ⚠️ **MOVED TO NEW REPOSITORY**
+## Polymer Fusion Framework Migration (June 2025)
 
-The `polymer-induced-fusion` directory and all fusion-specific code have been **moved** to a dedicated repository:
-
-**New Location**: [`polymer-fusion-framework`](../polymer-fusion-framework/)
+### Overview
+The `polymer-induced-fusion` directory and all fusion-specific code have been migrated to a dedicated repository for better organization and focused development.
 
 ### Migration Details
 - **Date**: June 12, 2025
-- **Reason**: Focus and modularity - separating fusion research from core GUT polymerization
+- **New Location**: [`polymer-fusion-framework`](https://github.com/arcticoder/polymer-fusion-framework)
 - **Files Moved**: 113 files (11.43 MB total)
 - **Status**: ✅ **COMPLETE**
 
@@ -21,9 +20,9 @@ All fusion-related code, documentation, and results:
 - Simulation results and validation data
 - Economic analysis frameworks
 
-### Updated Structure
+### Repository Structure Changes
 
-**Before:**
+**Before Migration:**
 ```
 unified-gut-polymerization/
 ├── polymer-induced-fusion/    # ← MOVED
@@ -34,7 +33,7 @@ unified-gut-polymerization/
 └── [other GUT components]
 ```
 
-**After:**
+**After Migration:**
 ```
 polymer-fusion-framework/         # ← NEW REPOSITORY
 ├── polymer-induced-fusion/       # ← MOVED HERE
@@ -51,16 +50,17 @@ unified-gut-polymerization/       # ← FOCUSED ON GUT PHYSICS
 └── [no fusion code]
 ```
 
-### How to Access
-1. **New Repository**: Navigate to `../polymer-fusion-framework/`
+### Access Instructions
+1. **New Repository**: Navigate to [`polymer-fusion-framework`](https://github.com/arcticoder/polymer-fusion-framework)
 2. **Same Functionality**: All scripts work identically
 3. **Same Dependencies**: Requirements preserved
 4. **Updated Documentation**: Enhanced README and setup files
 
 ### Quick Migration Commands
 ```bash
-# Navigate to new location
-cd ../polymer-fusion-framework/polymer-induced-fusion/
+# Clone the new repository
+git clone https://github.com/arcticoder/polymer-fusion-framework.git
+cd polymer-fusion-framework/polymer-induced-fusion/
 
 # Run HTS analysis (same as before)
 python hts_materials_simulation.py
@@ -78,11 +78,11 @@ python plan_b_polymer_fusion.py
 - ✅ **Independent Versioning**: Separate release cycles
 
 ### Integration Status
-The HTS materials simulation remains **fully integrated** with the phenomenology framework in `warp-bubble-optimizer/`, providing seamless co-simulation capabilities.
+The HTS materials simulation remains **fully integrated** with the phenomenology framework in [`warp-bubble-optimizer`](https://github.com/arcticoder/warp-bubble-optimizer), providing seamless co-simulation capabilities.
 
 ---
 
-**For fusion research**: Use [`polymer-fusion-framework`](../polymer-fusion-framework/)  
+**For fusion research**: Use [`polymer-fusion-framework`](https://github.com/arcticoder/polymer-fusion-framework)  
 **For GUT polymerization**: Continue using this repository
 
 **Migration Status**: ✅ **COMPLETE** - All fusion code successfully moved and operational
