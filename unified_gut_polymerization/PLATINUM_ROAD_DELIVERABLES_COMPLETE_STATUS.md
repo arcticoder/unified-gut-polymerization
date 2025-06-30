@@ -17,7 +17,7 @@ All four "platinum-road" QFT/ANEC deliverables have been **explicitly documented
 - `unified-lqg/unified_LQG_QFT_key_discoveries.txt` (Entry 161)
 
 **Mathematical Formula Documented:**
-```latex
+```math
 \tilde{D}^{ab}_{\mu\nu}(k) = \delta^{ab} \frac{\eta_{\mu\nu} - k_\mu k_\nu/k^2}{\mu_g^2} \frac{\sin^2(\mu_g\sqrt{k^2+m_g^2})}{k^2+m_g^2}
 ```
 
@@ -36,7 +36,7 @@ All four "platinum-road" QFT/ANEC deliverables have been **explicitly documented
 - All .tex files contain the complete derivation and integration
 
 **Mathematical Formula Documented:**
-```latex
+```math
 \alpha_{\text{eff}}(E) = \frac{\alpha_0}{1 - \frac{b}{2\pi}\alpha_0 \ln(E/E_0)}
 
 \Gamma_{\text{Sch}}^{\text{poly}} = \frac{(\alpha_{\text{eff}} eE)^2}{4\pi^3\hbar c} \exp\left[-\frac{\pi m^2c^3}{eE\hbar}F(\mu_g)\right]
@@ -62,7 +62,7 @@ All four "platinum-road" QFT/ANEC deliverables have been **explicitly documented
 - Total: 500 parameter combinations
 
 **Ratios Computed & Tabulated:**
-```latex
+```math
 \frac{\Gamma_{\text{total}}^{\text{poly}}}{\Gamma_0} = \frac{\Gamma_{\text{Sch}}^{\text{poly}}(\mu_g, b)}{\Gamma_{\text{Sch}}^{\text{classical}}}
 
 \frac{E_{\text{crit}}^{\text{poly}}}{E_{\text{crit}}} = \frac{m^2/\alpha_{\text{eff}}(\mu_g, b)}{m^2/\alpha_0}
@@ -81,7 +81,7 @@ All four "platinum-road" QFT/ANEC deliverables have been **explicitly documented
 - Complete instanton mapping and UQ integration documented
 
 **Instanton Formula Documented:**
-```latex
+```math
 \Gamma_{\text{inst}}^{\text{poly}}(\Phi_{\text{inst}}) = A \exp\left[-\frac{S_{\text{inst}}}{\hbar}\right] \cos^2\left(\frac{\Phi_{\text{inst}}}{2}\right) P_{\text{polymer}}(\mu_g)
 
 \Gamma_{\text{total}} = \Gamma_{\text{Sch}}^{\text{poly}} + \Gamma_{\text{inst}}^{\text{poly}}
